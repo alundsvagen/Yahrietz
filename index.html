@@ -456,24 +456,31 @@
     }
 
     .synagogue-text {
-      font-size: 34px; /* ~30% larger than 26px */
       max-width: 500px;
-      line-height: 1.6;
       text-align: left;
-      font-weight: 400;
       font-family: 'Inter', sans-serif;
     }
 
+    .synagogue-header {
+      font-size: 40px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .synagogue-line {
+      font-size: 25px;
+      font-weight: 400;
+    }
+
     .synagogue-dynamic {
+      font-size: 25px;
       font-weight: 700;
       display: inline-block;
-      font-size: 22px;
       min-height: 40px;
       white-space: nowrap;
       border-right: 2px solid #db2777;
       overflow: hidden;
-      color: #db2777; /* Tailwind pink-600 */
-      margin-top: 10px;
+      color: #db2777;
     }
 
     .fade-out {
@@ -512,19 +519,17 @@
   </style>
 
   <div class="synagogue-section">
-    <!-- Text -->
+    <!-- Text Content -->
     <div class="synagogue-text">
-      <p>
+      <p class="synagogue-header">
         Built for Synagogues from experience within the Community.
-        <br><br>
-        Our team was
       </p>
+      <p class="synagogue-line">Our team was</p>
       <div class="synagogue-dynamic fade-out" id="experience-text"></div>
-
       <a href="#contact" class="cta-button">Book demo now</a>
     </div>
 
-    <!-- Card -->
+    <!-- Floating Card -->
     <div class="synagogue-card">
       <img src="help.svg" alt="Help Icon" />
     </div>
@@ -567,7 +572,6 @@
   </script>
 </section>
 <!-- ✨ Community Experience Section End -->
-
   
 </body>
 </html>
