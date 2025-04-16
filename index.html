@@ -2,52 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My First GitHub Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome Software</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #667eea, #764ba2);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-    a {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: white;
-      color: #764ba2;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    a:hover {
-      background-color: #ddd;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   </style>
 </head>
-<body>
-  <h1>dude it was me this whole time!</h1>
-  <p>silly silly silly</p>
-  <a href="https://github.com">View My GitHub</a>
+<body class="bg-white text-gray-900">
+  <header class="flex justify-between items-center p-6 shadow-md">
+    <div class="text-2xl font-bold">AwesomeSoft</div>
+    <nav class="space-x-6">
+      <a href="#features" class="hover:text-blue-600">Features</a>
+      <a href="#pricing" class="hover:text-blue-600">Pricing</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
+      <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Get Started</a>
+    </nav>
+  </header>
+
+  <main class="text-center py-24 px-6">
+    <h1 class="text-5xl font-extrabold leading-tight mb-6">Software That Empowers Your Workflow</h1>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">Streamline your productivity with our intuitive, fast, and reliable software solution. Built for modern teams and creators.</p>
+    <a href="#" class="bg-blue-600 text-white px-6 py-3 text-lg rounded-full shadow-md hover:bg-blue-700">Try It Free</a>
+  </main>
+
+  <section id="features" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Features You'll Love</h2>
+      <div class="grid md:grid-cols-3 gap-12 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Sleek Interface</h3>
+          <p class="text-gray-600">Our software features a clean, minimal interface that keeps you focused.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Powerful Tools</h3>
+          <p class="text-gray-600">Packed with features to help you work smarter, not harder.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Cloud Sync</h3>
+          <p class="text-gray-600">Access your work anytime, anywhere with seamless cloud integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Simple, Transparent Pricing</h2>
+      <p class="text-gray-600 mb-12">Choose a plan that works for you and your team.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-8 w-full md:w-1/3">
+          <h3 class="text-xl font-bold mb-4">Basic</h3>
+          <p class="text-4xl font-extrabold mb-4">$9<span class="text-base font-medium">/mo</span></p>
+          <p class="mb-6 text-gray-600">Perfect for individuals and freelancers.</p>
+          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Choose Plan</a>
+        </div>
+        <div class="bg-blue-50 shadow-lg rounded-lg p-8 w-full md:w-1/3">
+          <h3 class="text-xl font-bold mb-4">Pro</h3>
+          <p class="text-4xl font-extrabold mb-4">$29<span class="text-base font-medium">/mo</span></p>
+          <p class="mb-6 text-gray-600">Best for teams and power users.</p>
+          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Choose Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="bg-gray-900 text-white py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
+      <p class="mb-6 text-gray-400">Have questions? We'd love to hear from you.</p>
+      <a href="mailto:hello@awesomesoft.com" class="text-blue-400 hover:underline">hello@awesomesoft.com</a>
+      <p class="mt-8 text-gray-600 text-sm">&copy; 2025 AwesomeSoft. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
