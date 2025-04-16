@@ -414,6 +414,7 @@
     </div>
   </div>
 </section>
+  
 <!-- ✨ Community Experience Section Start -->
 <section class="py-24 px-6 bg-white text-gray-900">
   <style>
@@ -455,20 +456,24 @@
     }
 
     .synagogue-text {
-      font-size: 26px;
+      font-size: 34px; /* ~30% larger than 26px */
       max-width: 500px;
       line-height: 1.6;
       text-align: left;
       font-weight: 400;
+      font-family: 'Inter', sans-serif;
     }
 
     .synagogue-dynamic {
       font-weight: 700;
       display: inline-block;
+      font-size: 22px;
       min-height: 40px;
       white-space: nowrap;
-      border-right: 2px solid #333;
+      border-right: 2px solid #db2777;
       overflow: hidden;
+      color: #db2777; /* Tailwind pink-600 */
+      margin-top: 10px;
     }
 
     .fade-out {
@@ -476,12 +481,21 @@
       transition: opacity 0.5s ease-out;
     }
 
-    .synagogue-closer {
+    .cta-button {
+      display: inline-block;
       margin-top: 2rem;
-      font-family: 'Lora', serif;
-      font-size: 20px;
-      font-style: italic;
-      color: #db2777; /* Tailwind pink-600 */
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #1f1f1f;
     }
 
     @keyframes float {
@@ -499,17 +513,15 @@
 
   <div class="synagogue-section">
     <!-- Text -->
-    <div class="synagogue-text font-inter">
+    <div class="synagogue-text">
       <p>
         Built for Synagogues from experience within the Community.
         <br><br>
         Our team was
       </p>
       <div class="synagogue-dynamic fade-out" id="experience-text"></div>
-      <div class="synagogue-closer">
-        But not anymore.<br>
-        Book a demo with us today.
-      </div>
+
+      <a href="#contact" class="cta-button">Book demo now</a>
     </div>
 
     <!-- Card -->
@@ -555,6 +567,7 @@
   </script>
 </section>
 <!-- ✨ Community Experience Section End -->
+
   
 </body>
 </html>
