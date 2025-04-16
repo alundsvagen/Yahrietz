@@ -1,126 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- HEADER MENU UPDATED -->
-<header class="flex justify-between items-center px-6 py-4 border-b">
-  <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
-  <nav class="space-x-6 hidden md:flex items-center">
-    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
-    <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
-    <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
-    <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
-    <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Try for free</a>
-  </nav>
-</header>
-
-<!-- CTA BUTTON LINK UPDATED -->
-<a href="mailto:alexandra@yahrzeit.uk" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
-
-<!-- FLOATING CARD LINK WRAPPER ADDED -->
-<div class="synagogue-card">
-  <a href="getstarted.html">
-    <img src="help.svg" alt="Help Icon" />
-  </a>
-</div>
-
-<!-- PRODUCT CARD LINKS WRAPPED -->
-<!-- Example shown, repeat for all product cards -->
-<a href="getstarted.html">
-  <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl bg-white flex flex-col">
-    <img src="doc.svg" alt="Doc Icon" class="mb-6 w-24 h-24 mx-auto" />
-    <h3 class="text-xl font-semibold mb-2 text-center">Custom Yahrziet Letters</h3>
-    <p class="text-gray-600 text-base text-center">Automated, beautifully personalized memorial letters honoring loved ones annually.</p>
-  </div>
-</a
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yahrziet — Tools Built for Synagogues</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradientShift 15s ease infinite;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    @keyframes slide {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-slide {
-      animation: slide 80s linear infinite;
-    }
-
-    .hero-title {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 70px;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .hero-subtext {
-      font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      line-height: 1.4;
-      margin-bottom: 2rem;
-    }
-
-    .cta-button {
-      background-color: #ff82c2;
-      color: white;
-    }
-
-    .section-header {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-    }
-
-    .section-subtext {
-      font-family: 'Inter', sans-serif;
-    }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .animate-gradient { background-size: 200% 200%; animation: gradientShift 15s ease infinite; }
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-slide { animation: slide 80s linear infinite; }
+    .hero-title { font-family: 'Lora', serif; font-weight: 700; font-size: 70px; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-subtext { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.4; margin-bottom: 2rem; }
+    .cta-button { background-color: #ff82c2; color: white; }
+    .section-header { font-family: 'Lora', serif; font-weight: 700; }
+    .section-subtext { font-family: 'Inter', sans-serif; }
   </style>
 </head>
 <body class="bg-white text-gray-900">
+
+  <!-- Moved header OUT of <head> and into <body> -->
   <header class="flex justify-between items-center px-6 py-4 border-b">
     <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
     <nav class="space-x-6 hidden md:flex items-center">
-      <a href="#products" class="text-sm font-medium hover:text-blue-600">Products</a>
-      <a href="#about" class="text-sm font-medium hover:text-blue-600">About</a>
-      <a href="#contact" class="text-sm font-medium hover:text-blue-600">Contact</a>
-      <a href="#" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Try for free</a>
+      <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
+      <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
+      <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
+      <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+      <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Try for free</a>
     </nav>
   </header>
 
+  <!-- CTA BUTTON LINK FIXED -->
   <section class="bg-[#f1f0eb] py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h1 class="hero-title">Admin That Works Like a Mensch</h1>
       <p class="hero-subtext text-gray-700">Helping synagogues save time and stay organized—without the stress.</p>
-      <a href="#" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
+      <a href="mailto:alexandra@yahrzeit.uk" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
     </div>
   </section>
+
+  <!-- Floating Card Link Example -->
+  <section class="py-24 px-6 bg-white text-gray-900">
+    <div class="synagogue-section">
+      <div class="synagogue-text">
+        <p class="synagogue-header">Built for Synagogues from experience within the Community.</p>
+        <p class="synagogue-line">Our team was</p>
+        <div class="synagogue-dynamic fade-out" id="experience-text"></div>
+      </div>
+      <a href="getstarted.html" class="synagogue-card">
+        <img src="help.svg" alt="Help Icon" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Product Card Link Wrapper Fixed (example only) -->
+  <section id="products" class="py-20 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex space-x-6 animate-slide overflow-x-hidden w-max">
+        <div class="flex space-x-6">
+          <a href="getstarted.html">
+            <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl bg-white flex flex-col">
+              <img src="doc.svg" alt="Doc Icon" class="mb-6 w-24 h-24 mx-auto" />
+              <h3 class="text-xl font-semibold mb-2 text-center">Custom Yahrziet Letters</h3>
+              <p class="text-gray-600 text-base text-center">Automated, beautifully personalized memorial letters honoring loved ones annually.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+"""
+
+# Write the corrected HTML content to a file
+with open(fixed_html_path, "w", encoding="utf-8") as f:
+    f.write(fixed_html)
+
+fixed_html_path.name
 
   <!-- ✨ Community Experience Section Start -->
 <section class="py-24 px-6 bg-white text-gray-900">
