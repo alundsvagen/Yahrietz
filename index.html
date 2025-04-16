@@ -89,66 +89,7 @@
       <a href="#" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
     </div>
   </section>
-
-  <section class="py-24 px-6 bg-black text-white">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
-    <!-- Block 1 -->
-    <div>
-      <div class="text-pink-400 text-[450px] font-bold neon-glow" data-target="85" data-prefix="" data-suffix="%">59%</div>
-      <p class="text-lg font-inter mt-2">Improved efficiency</p>
-    </div>
-    <!-- Block 2 -->
-    <div>
-      <div class="text-pink-400 text-[450px] font-bold neon-glow" data-target="795" data-prefix="" data-suffix="">20</div>
-      <p class="text-lg font-inter mt-2">Hours saved</p>
-    </div>
-    <!-- Block 3 -->
-    <div>
-      <div class="text-pink-400 text-[450px] font-bold neon-glow" data-target="25" data-prefix="" data-suffix="%">5%</div>
-      <p class="text-lg font-inter mt-2">Improved attendance rate</p>
-    </div>
-    <!-- Block 4 -->
-    <div>
-      <div class="text-pink-400 text-[450px] font-bold neon-glow" data-target="4" data-prefix="" data-suffix="%" data-direction="down">35%</div>
-      <p class="text-lg font-inter mt-2">Unpaid membership dues</p>
-    </div>
-  </div>
-</section>
-
-<style>
-  .neon-glow {
-    text-shadow: 0 0 2px #ff82c2, 0 0 4px #ff82c2, 0 0 8px #ff82c2;
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll("[data-target]");
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
-      const isPercent = counter.getAttribute("data-suffix") === "%";
-      const direction = counter.getAttribute("data-direction") === "down" ? -1 : 1;
-      let current = +counter.textContent.replace('%', '');
-
-      const step = Math.abs(target - current) / 40;
-
-      const updateCount = () => {
-        current += step * direction;
-        if ((direction === 1 && current >= target) || (direction === -1 && current <= target)) {
-          counter.textContent = target + (isPercent ? '%' : '');
-        } else {
-          counter.textContent = Math.round(current) + (isPercent ? '%' : '');
-          requestAnimationFrame(updateCount);
-        }
-      };
-
-      requestAnimationFrame(updateCount);
-    });
-  });
-</script>
-
-  <section class=\"py-24 px-6 bg-white text-gray-900\">
+<section class=\"py-24 px-6 bg-white text-gray-900\">
   <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
     <!-- Block 1 -->
     <div>
