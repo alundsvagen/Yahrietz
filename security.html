@@ -1,1 +1,43 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahrziet — Tools Built for Synagogues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .animate-gradient { background-size: 200% 200%; animation: gradientShift 15s ease infinite; }
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-slide { animation: slide 80s linear infinite; }
+    .hero-title { font-family: 'Lora', serif; font-weight: 700; font-size: 70px; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-subtext { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.4; margin-bottom: 2rem; }
+    .cta-button { background-color: #ff82c2; color: white; }
+    .section-header { font-family: 'Lora', serif; font-weight: 700; }
+    .section-subtext { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Moved header OUT of <head> and into <body> -->
+  <header class="flex justify-between items-center px-6 py-4 border-b">
+    <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
+    <nav class="space-x-6 hidden md:flex items-center">
+      <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
+      <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
+      <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
+      <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+      <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
+    </nav>
+  </header>
+
+  <!-- CTA BUTTON LINK FIXED -->
+  <section class="bg-[#f1f0eb] py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="hero-title">Admin That Works Like a Mensch</h1>
+      <p class="hero-subtext text-gray-700">Helping synagogues save time and stay organized—without the stress.</p>
+      <a href="mailto:alexandra@yahrzeit.uk" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
+    </div>
+  </section>
