@@ -556,5 +556,36 @@
   
 <!-- ✨ Typing + Floating Card Section End -->
   
+  <!-- ✨ Footer Start -->
+<footer class="bg-gray-900 text-white py-16">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:justify-between md:items-center gap-12">
+    
+    <!-- Left: Brand & Motto -->
+    <div class="space-y-4 text-center md:text-left">
+      <h2 class="text-2xl font-bold tracking-tight">Yahrziet</h2>
+      <p class="text-gray-400">Built with love from the Stockholm Jewish Community</p>
+      <a href="mailto:hello@yahrziet.com" class="text-pink-400 hover:underline">hello@yahrziet.com</a>
+    </div>
+
+    <!-- Right: Navigation -->
+    <div class="flex flex-col items-center md:items-end gap-4 text-sm">
+      <nav class="flex gap-6">
+        <a href="#products" class="hover:text-pink-400 transition">Products</a>
+        <a href="#about" class="hover:text-pink-400 transition">About</a>
+        <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
+      </nav>
+      <p class="text-gray-500 text-xs mt-4">&copy; <span id="year"></span> Yahrziet. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Auto-update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<!-- ✨ Footer End -->
+
+  
 </body>
 </html>
