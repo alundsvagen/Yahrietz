@@ -208,7 +208,7 @@
   });
 </script>
 
-  <!-- ✨ Typing + Floating Card Section Start -->
+ <!-- ✨ Typing + Floating Card Section Start -->
 <section class="py-24 px-6 bg-white text-gray-900">
   <style>
     .typing-section {
@@ -229,11 +229,10 @@
       width: 280px;
       height: 400px;
       border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      background: linear-gradient(135deg, rgba(255, 130, 194, 1), rgba(255, 130, 194, 0.2));
-      background-size: 200% 200%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      background: white;
       position: relative;
-      animation: float 10s ease-in-out infinite, moveGradient 15s ease-in-out infinite;
+      animation: float 10s ease-in-out infinite;
       overflow: hidden;
     }
 
@@ -241,7 +240,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 120px;
+      width: 240px;
       height: auto;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -277,12 +276,6 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
-
-    @keyframes moveGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
   </style>
 
   <div class="typing-section">
@@ -291,7 +284,7 @@
     </div>
     <div class="typing-text font-inter">
       <div class="typing-static">
-        Helping Jewish Communities increase engagement while decreasing time
+        Helping Jewish Communities increase engagement while decreasing
       </div>
       <div class="typing-dynamic fade-out" id="dynamic-text"></div>
     </div>
@@ -299,11 +292,11 @@
 
   <script>
     const phrases = [
-      "spent in Excel.",
-      "spent with registrations.",
-      "checking payments.",
-      "security verifying non-members.",
-      "booking rooms."
+      "time spent in excel.",
+      "time spent with registrations.",
+      "time checking payments.",
+      "time security verifying non-members.",
+      "time booking rooms."
     ];
 
     const el = document.getElementById("dynamic-text");
