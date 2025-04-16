@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yahrziet — Built for Synagogues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     body {
@@ -23,6 +23,21 @@
     .animate-slide {
       animation: slide 80s linear infinite;
     }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 70px;
+    }
+
+    .hero-subtext {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+    }
+
+    .cta-button {
+      background-color: #ff82c2;
+      color: white;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -36,53 +51,55 @@
     </nav>
   </header>
 
-  <section class="text-center bg-gray-50 py-24 px-6">
-    <h1 class="text-6xl font-extrabold leading-tight mb-6 tracking-tight">Built for Synagogues</h1>
-    <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">Empowering Jewish communities with tools for memory, connection, and growth.</p>
-    <a href="#" class="bg-black text-white px-8 py-3 text-lg rounded-full hover:bg-gray-800 transition">Request a Demo</a>
+  <section class="bg-[#f1f0eb] py-24 px-6">
+    <div class="max-w-5xl mx-auto text-left">
+      <h1 class="hero-title mb-4">Built for Synagogues</h1>
+      <p class="hero-subtext text-gray-700 mb-10 max-w-2xl">Empowering Jewish communities with tools for memory, connection, and growth.</p>
+      <a href="#" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
+    </div>
   </section>
 
-<section id="products" class="py-20 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex space-x-6 animate-slide overflow-x-hidden">
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="doc.svg" alt="Doc Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Custom Yahrziet Letters</h3>
-        <p class="text-gray-600 text-base text-center">Automated, beautifully personalized memorial letters honoring loved ones annually.</p>
-      </div>
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="calendar.svg" alt="Calendar Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Bnei Mitzvah Scheduler</h3>
-        <p class="text-gray-600 text-base text-center">Simplify scheduling, family communication, and preparation tracking.</p>
-      </div>
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="bill.svg" alt="Bill Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Membership Portal & Payments</h3>
-        <p class="text-gray-600 text-base text-center">Self-service tools for dues, donations, account updates, and more.</p>
-      </div>
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="dashboard-4.svg" alt="Dashboard Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Event Tickets & Payments</h3>
-        <p class="text-gray-600 text-base text-center">Host paid or free events with built-in ticketing and RSVP functionality.</p>
-      </div>
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="coffee-cup-2.svg" alt="Coffee Cup Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Room Booking Software</h3>
-        <p class="text-gray-600 text-base text-center">Reserve rooms for services, classes, meetings, and lifecycle events with ease.</p>
-      </div>
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="checklist.svg" alt="Checklist Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Membership Applications Tracker</h3>
-        <p class="text-gray-600 text-base text-center">Track interest, onboarding, and progress for prospective members.</p>
-      </div>
-      <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
-        <img src="setting-3.svg" alt="Settings Icon" class="mb-6 w-24 h-24 mx-auto" />
-        <h3 class="text-xl font-semibold mb-2 text-center">Conversion Tracker</h3>
-        <p class="text-gray-600 text-base text-center">Support conversion journeys with smart tools for clergy and mentors.</p>
+  <section id="products" class="py-20 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex space-x-6 animate-slide overflow-x-hidden">
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="doc.svg" alt="Doc Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Custom Yahrziet Letters</h3>
+          <p class="text-gray-600 text-base text-center">Automated, beautifully personalized memorial letters honoring loved ones annually.</p>
+        </div>
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="calendar.svg" alt="Calendar Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Bnei Mitzvah Scheduler</h3>
+          <p class="text-gray-600 text-base text-center">Simplify scheduling, family communication, and preparation tracking.</p>
+        </div>
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="bill.svg" alt="Bill Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Membership Portal & Payments</h3>
+          <p class="text-gray-600 text-base text-center">Self-service tools for dues, donations, account updates, and more.</p>
+        </div>
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="dashboard-4.svg" alt="Dashboard Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Event Tickets & Payments</h3>
+          <p class="text-gray-600 text-base text-center">Host paid or free events with built-in ticketing and RSVP functionality.</p>
+        </div>
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="coffee-cup-2.svg" alt="Coffee Cup Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Room Booking Software</h3>
+          <p class="text-gray-600 text-base text-center">Reserve rooms for services, classes, meetings, and lifecycle events with ease.</p>
+        </div>
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="checklist.svg" alt="Checklist Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Membership Applications Tracker</h3>
+          <p class="text-gray-600 text-base text-center">Track interest, onboarding, and progress for prospective members.</p>
+        </div>
+        <div class="flex-none w-72 h-[36rem] p-8 border rounded-2xl shadow-2xl transition text-left bg-white flex flex-col">
+          <img src="setting-3.svg" alt="Settings Icon" class="mb-6 w-24 h-24 mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 text-center">Conversion Tracker</h3>
+          <p class="text-gray-600 text-base text-center">Support conversion journeys with smart tools for clergy and mentors.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <footer id="contact" class="bg-gray-900 text-white py-16">
     <div class="max-w-4xl mx-auto px-6 text-center">
