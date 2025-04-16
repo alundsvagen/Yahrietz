@@ -208,6 +208,133 @@
   });
 </script>
 
+  <!-- ✨ Typing + Floating Card Section Start -->
+<section class="py-24 px-6 bg-white text-gray-900">
+  <style>
+    .typing-section {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .typing-section {
+        flex-direction: row;
+      }
+    }
+
+    .typing-card {
+      width: 280px;
+      height: 400px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, rgba(255, 130, 194, 1), rgba(255, 130, 194, 0.2));
+      background-size: 200% 200%;
+      position: relative;
+      animation: float 10s ease-in-out infinite, moveGradient 15s ease-in-out infinite;
+      overflow: hidden;
+    }
+
+    .typing-card img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .typing-text {
+      font-size: 26px;
+      max-width: 500px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .typing-static {
+      margin-bottom: 12px;
+    }
+
+    .typing-dynamic {
+      font-weight: 700;
+      display: inline-block;
+      min-height: 40px;
+      white-space: nowrap;
+      border-right: 2px solid #333;
+      overflow: hidden;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+
+  <div class="typing-section">
+    <div class="typing-card">
+      <img src="To Do List No Tasks.svg" alt="To Do List Icon" />
+    </div>
+    <div class="typing-text font-inter">
+      <div class="typing-static">
+        Helping Jewish Communities increase engagement while decreasing time
+      </div>
+      <div class="typing-dynamic fade-out" id="dynamic-text"></div>
+    </div>
+  </div>
+
+  <script>
+    const phrases = [
+      "spent in Excel.",
+      "spent with registrations.",
+      "checking payments.",
+      "security verifying non-members.",
+      "booking rooms."
+    ];
+
+    const el = document.getElementById("dynamic-text");
+    let phraseIndex = 0;
+
+    function typePhrase(phrase, i = 0) {
+      if (i === 0) {
+        el.classList.add("fade-out");
+      }
+
+      setTimeout(() => {
+        if (i === 0) el.textContent = "";
+
+        if (i < phrase.length) {
+          el.classList.remove("fade-out");
+          el.textContent += phrase.charAt(i);
+          typePhrase(phrase, i + 1);
+        } else {
+          setTimeout(() => {
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typePhrase(phrases[phraseIndex]);
+          }, 2500);
+        }
+      }, i === 0 ? 500 : 50);
+    }
+
+    typePhrase(phrases[phraseIndex]);
+  </script>
+</section>
+<!-- ✨ Typing + Floating Card Section End -->
+
   <!-- Product cards remain unchanged -->
   <section id="products" class="py-20 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
