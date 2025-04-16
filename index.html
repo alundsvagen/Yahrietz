@@ -420,14 +420,15 @@
     .synagogue-section {
       display: flex;
       flex-direction: column-reverse;
-      gap: 60px;
+      gap: 80px;
       align-items: center;
       justify-content: center;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       .synagogue-section {
         flex-direction: row;
+        gap: 120px;
       }
     }
 
@@ -436,10 +437,10 @@
       height: 400px;
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(135deg, rgba(255, 130, 194, 1), rgba(255, 130, 194, 0.2));
+      background: linear-gradient(135deg, rgba(255, 130, 194, 0.5), rgba(255, 130, 194, 0.05));
       background-size: 200% 200%;
       position: relative;
-      animation: float 10s ease-in-out infinite, moveGradient 15s ease-in-out infinite;
+      animation: float 10s ease-in-out infinite, moveGradient 12s ease-in-out infinite;
       overflow: hidden;
     }
 
@@ -447,7 +448,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 120px;
+      width: 240px;
       height: auto;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -458,11 +459,7 @@
       max-width: 500px;
       line-height: 1.6;
       text-align: left;
-    }
-
-    .synagogue-static {
-      margin-bottom: 12px;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     .synagogue-dynamic {
@@ -477,6 +474,14 @@
     .fade-out {
       opacity: 0;
       transition: opacity 0.5s ease-out;
+    }
+
+    .synagogue-closer {
+      margin-top: 2rem;
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #db2777; /* Tailwind pink-600 */
     }
 
     @keyframes float {
@@ -495,13 +500,15 @@
   <div class="synagogue-section">
     <!-- Text -->
     <div class="synagogue-text font-inter">
-      <div class="synagogue-static">
-        Built for Synagogues from experience within the Community.<br />
+      <p>
+        Built for Synagogues from experience within the Community.
+        <br><br>
         Our team was
-      </div>
+      </p>
       <div class="synagogue-dynamic fade-out" id="experience-text"></div>
-      <div class="mt-4 font-normal">
-        But not anymore. Book a demo with us today.
+      <div class="synagogue-closer">
+        But not anymore.<br>
+        Book a demo with us today.
       </div>
     </div>
 
@@ -548,7 +555,6 @@
   </script>
 </section>
 <!-- ✨ Community Experience Section End -->
-
   
 </body>
 </html>
