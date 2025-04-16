@@ -217,188 +217,104 @@
 </section>
 <!-- ✨ Community Experience Section End -->
 <!-- ✨ Pricing Section -->
-  <section class="py-24 overflow-hidden">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-    body {
-      margin: 0;
-      background: white;
-    }
+  body {
+    margin: 0;
+    background: white;
+  }
 
-    .drag-wrapper {
-      max-width: 90vw;
-      margin: 0 auto;
-      overflow: hidden;
-      transform: scale(0.8);
-      transform-origin: top center;
-    }
+  .drag-wrapper {
+    max-width: 90vw;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
 
-    .drag-section {
-      cursor: grab;
-      overflow-x: auto;
-      overflow-y: hidden;
-      display: flex;
-      gap: 40px;
-      padding: 40px 60px 40px 40px;
-      scroll-behavior: smooth;
-    }
+  .drag-section {
+    cursor: grab;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 40px;
+    padding: 40px 60px 40px 40px;
+    scroll-behavior: smooth;
+  }
 
-    .drag-section:active {
-      cursor: grabbing;
-    }
+  .drag-section:active {
+    cursor: grabbing;
+  }
 
-    .drag-card {
-      flex: 0 0 auto;
-      width: 600px;
-      min-height: 540px;
-      border-radius: 30px;
-      background: #fde8f4;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-      animation: float 6s ease-in-out infinite;
-      transition: all 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 40px;
-      box-sizing: border-box;
-      position: relative;
-    }
+  .drag-card {
+    flex: 0 0 auto;
+    width: 600px;
+    min-height: 540px;
+    border-radius: 30px;
+    background: #fde8f4;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    animation: float 6s ease-in-out infinite;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+  }
 
-    .drag-card:hover {
-      transform: scale(1.02) translateY(-8px);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1);
-    }
+  .drag-card:hover {
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1);
+  }
 
-    .card-icon {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 20px;
-    }
+  .card-icon {
+    width: 160px; /* 150% larger */
+    height: 160px;
+    margin-bottom: 20px;
+  }
 
-    .card-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 32px;
-      color: #111;
-      margin-bottom: 20px;
-    }
+  .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #111;
+    margin-bottom: 20px;
+  }
 
-    .card-features {
-      font-family: 'Inter', sans-serif;
-      font-size: 22.5px; /* 25% larger than base */
-      color: #333;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      padding-left: 1.2rem;
-    }
+  .card-features {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; /* 50% smaller */
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    padding-left: 1.2rem;
+  }
 
-    .card-features li {
-      margin-bottom: 10px;
-      list-style: disc;
-    }
+  .card-features li {
+    margin-bottom: 10px;
+    list-style: disc;
+  }
 
-    .card-price {
-      font-family: 'Inter', sans-serif;
-      background: #f9a8d4;
-      color: #111;
-      font-weight: 600;
-      font-size: 20px;
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 9999px;
-      align-self: flex-start;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+  .card-price {
+    font-family: 'Inter', sans-serif;
+    background: #f9a8d4;
+    color: #111;
+    font-weight: 600;
+    font-size: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    align-self: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
-  </style>
-
-  <div class="drag-wrapper">
-    <div class="drag-section" id="dragContainer">
-      <!-- Yahrziet Letters Card -->
-      <div class="drag-card">
-        <div>
-          <img src="checklist.svg" alt="Checklist Icon" class="card-icon" />
-          <div class="card-title">Yahrziet Letters</div>
-          <ul class="card-features">
-            <li>Customized letters with your Synagogue’s logo, service times, and signature</li>
-            <li>Calculates the Hebrew date of the person's death</li>
-            <li>Calculates what that date is this year on the Hebrew calendar</li>
-            <li>Calculates the Gregorian calendar date for this year</li>
-            <li>Subtracts one day — when you light the 24-hour candle</li>
-            <li>Calculates sunset time for your synagogue’s location</li>
-            <li>Sends you PDFs ready to be mailed to members</li>
-          </ul>
-        </div>
-        <div class="card-price">$29/month</div>
-      </div>
-
-      <!-- B’nei Mitzvah Scheduler Card -->
-      <div class="drag-card">
-        <div>
-          <img src="project-timeline.svg" alt="Timeline Icon" class="card-icon" />
-          <div class="card-title">B’nei Mitzvah Scheduler</div>
-          <ul class="card-features">
-            <li>Organized registration for students</li>
-            <li>Communicate with parents about steps in the process</li>
-            <li>Assign the student to their ceremony date and Parashah</li>
-            <li>See an overview of the whole year and all students</li>
-            <li>Assign teachers to students</li>
-            <li>Schedule weekly meetings with teachers</li>
-          </ul>
-        </div>
-        <div class="card-price">$125/month</div>
-      </div>
-
-      <!-- Room Booking Card (unchanged) -->
-      <div class="drag-card">
-        <div>
-          <img src="business-deal.svg" alt="Deal Icon" class="card-icon" />
-          <div class="card-title">Room Booking Software</div>
-          <ul class="card-features">
-            <li>Fast, intuitive room selection</li>
-            <li>Conflict-free scheduling</li>
-            <li>Permissions for staff & members</li>
-          </ul>
-        </div>
-        <div class="card-price">$149/month</div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const dragContainer = document.getElementById('dragContainer');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    dragContainer.addEventListener('mousedown', (e) => {
-      isDown = true;
-      startX = e.pageX - dragContainer.offsetLeft;
-      scrollLeft = dragContainer.scrollLeft;
-    });
-
-    dragContainer.addEventListener('mouseleave', () => {
-      isDown = false;
-    });
-
-    dragContainer.addEventListener('mouseup', () => {
-      isDown = false;
-    });
-
-    dragContainer.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - dragContainer.offsetLeft;
-      const walk = (x - startX) * 2;
-      dragContainer.scrollLeft = scrollLeft - walk;
-    });
-  </script>
-</section>
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+  }
+</style>
 <!-- ✨ End of Pricing Section -->
 
