@@ -333,17 +333,18 @@
     }
 
     .card-features {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px; /* smaller text */
-      color: #333;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      padding-left: 1.2rem;
-    }
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; /* mobile default */
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding-left: 1.2rem;
+}
 
-    .card-features li {
-      margin-bottom: 10px;
-      list-style: disc;
+@media (min-width: 768px) {
+  .card-features {
+    font-size: 14px; /* desktop / tablet */
+  }
     }
 
     .card-price {
