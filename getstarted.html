@@ -172,17 +172,25 @@
       margin-bottom: 6px;
     }
 
-    .synagogue-dynamic {
-      font-size: 22px;
-      font-weight: 600;
-      display: inline-block;
-      min-height: 40px;
-      white-space: nowrap;
-      border-right: 2px solid #111;
-      overflow: hidden;
-      color: #111;
-      margin-top: 6px;
-    }
+   .synagogue-dynamic {
+  font-size: 22px;
+  font-weight: 600;
+  display: inline-block;
+  min-height: 40px;
+  white-space: normal; /* ✅ allow line wrapping */
+  word-break: break-word; /* ✅ break long words cleanly */
+  border-right: 2px solid #111;
+  overflow: hidden;
+  color: #111;
+  margin-top: 6px;
+}
+
+@media (min-width: 768px) {
+  .synagogue-dynamic {
+    white-space: nowrap; /* Optional: nowrap only on tablets & up */
+    word-break: normal;
+  }
+}
 
     .fade-out {
       opacity: 0;
