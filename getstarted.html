@@ -458,62 +458,64 @@
   <!-- ✨ End of Pricin Section -->
 <!-- ✨ Final Call-to-Action Section -->
 <style>
-  .cta-headline {
-    font-size: 28px;
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .hero-title {
+    font-family: 'Lora', serif;
     font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 20px;
+    font-size: 70px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
 
-  @media (min-width: 768px) {
-    .cta-headline {
-      font-size: 36px;
-    }
-  }
-
-  .cta-subtext {
+  .hero-subtext {
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
-    color: #555;
-    margin-bottom: 36px;
-    line-height: 1.6;
+    line-height: 1.4;
+    margin-bottom: 2rem;
   }
 
   .cta-button {
-    display: inline-block;
-    background-color: #ec4899;
+    background-color: #ff82c2;
     color: white;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 18px 36px;
-    border-radius: 9999px;
-    text-decoration: none;
-    animation: floatButton 6s ease-in-out infinite;
-    transition: opacity 0.3s ease;
   }
 
-  .cta-button:hover {
-    opacity: 0.9;
+  .section-header {
+    font-family: 'Lora', serif;
+    font-weight: 700;
   }
 
-  @keyframes floatButton {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
+  .section-subtext {
+    font-family: 'Inter', sans-serif;
   }
 </style>
 
 <section class="bg-white py-20 px-6">
   <div class="max-w-3xl mx-auto text-center">
-    <h1 class="cta-headline">Try It Free for 3 Months</h1>
-    <p class="cta-subtext">
+    <h1 class="hero-title">Try It Free for 3 Months</h1>
+    <p class="hero-subtext text-gray-700">
       Get the first 3 months free — no commitment.<br />
       Try all three products with zero risk. Cancel anytime — no credit card required to start.
     </p>
-    <a href="mailto:alexandra@yahrzeit.uk" class="cta-button">
+    <a href="mailto:alexandra@yahrzeit.uk" class="cta-button px-8 py-3 text-lg font-semibold rounded-full transition hover:opacity-90 mt-6 inline-block">
       Start My Free 3 Months
     </a>
   </div>
 </section>
+
 
 
 
