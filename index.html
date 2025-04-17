@@ -480,25 +480,34 @@
       0% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
-    }
-    .ripple-gradient {
-  background: linear-gradient(to right, #ec4899, #000); /* pink to black */
+  .ripple-gradient {
+  background: linear-gradient(270deg, #ec4899, #000);
+  background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  position: relative;
-  animation: ripple 2s infinite;
+  animation: gradient-move 8s ease infinite, bounce 2.5s ease-in-out infinite;
+  display: inline-block;
 }
 
-@keyframes ripple {
+@keyframes gradient-move {
   0% {
-    text-shadow: 0 0 0 rgba(236, 72, 153, 0.5);
+    background-position: 0% 50%;
   }
   50% {
-    text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(0, 0, 0, 0.4);
+    background-position: 100% 50%;
   }
   100% {
-    text-shadow: 0 0 0 rgba(236, 72, 153, 0.5);
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
   </style>
@@ -508,8 +517,8 @@
       <img src="To Do List No Tasks.svg" alt="To Do List Icon" />
     </div>
     <div class="typing-text font-inter">
-      <div class="typing-static">
-        Helping Jewish Communities <span class="ripple-gradient">increase engagement</span> while decreasing
+     <div class="typing-static">
+      Helping Jewish Communities <span class="ripple-gradient">increase engagement</span> while decreasing
       </div>
       <div class="typing-dynamic fade-out" id="dynamic-text"></div>
     </div>
