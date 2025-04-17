@@ -239,13 +239,16 @@
   </script>
 </section>
 <!-- ✨ Community Experience Section End -->
-
-  <div class="max-w-5xl mx-auto px-6 mt-10 text-left">
+  
+<!-- ✨ Counter section -->
+  <!-- CTA Button -->
+<div class="max-w-5xl mx-auto px-6 mt-10 text-left">
   <a href="getstarted.html" class="inline-block bg-pink-500 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-pink-600 transition">
     See products
   </a>
 </div>
-  
+
+<!-- Stats Section -->
 <section class="py-24 px-6 bg-white text-gray-900">
   <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
     
@@ -283,86 +286,44 @@
   </div>
 </section>
 
+<!-- Counter Animation Script -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".count");
+    const duration = 60000; // 60 seconds
 
     counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
+      const target = parseFloat(counter.getAttribute("data-target"));
       const isPercent = counter.getAttribute("data-suffix") === "%";
       const direction = counter.getAttribute("data-direction") === "down" ? -1 : 1;
-      let current = parseFloat(counter.textContent.replace('%', ''));
-      const step = Math.abs(target - current) / 30;
+      const initial = parseFloat(counter.textContent.replace('%', ''));
+      const range = Math.abs(target - initial);
+      const frameRate = 60; // 60 FPS
+      const totalFrames = Math.round((duration / 1000) * frameRate);
+      const step = range / totalFrames * direction;
 
-      const updateCount = () => {
-        current += step * direction;
-        if ((direction === 1 && current >= target) || (direction === -1 && current <= target)) {
+      let current = initial;
+      let frame = 0;
+
+      const update = () => {
+        current += step;
+        frame++;
+
+        if ((direction === 1 && current >= target) || (direction === -1 && current <= target) || frame >= totalFrames) {
           counter.textContent = target + (isPercent ? '%' : '');
         } else {
           counter.textContent = Math.round(current) + (isPercent ? '%' : '');
-          requestAnimationFrame(updateCount);
+          requestAnimationFrame(update);
         }
       };
 
-      requestAnimationFrame(updateCount);
+      requestAnimationFrame(update);
     });
   });
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".count");
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
-      const isPercent = counter.getAttribute("data-suffix") === "%";
-      const direction = counter.getAttribute("data-direction") === "down" ? -1 : 1;
-      let current = parseFloat(counter.textContent.replace('%', ''));
-      const step = Math.abs(target - current) / 30;
-
-      const updateCount = () => {
-        current += step * direction;
-        if ((direction === 1 && current >= target) || (direction === -1 && current <= target)) {
-          counter.textContent = target + (isPercent ? '%' : '');
-        } else {
-          counter.textContent = Math.round(current) + (isPercent ? '%' : '');
-          requestAnimationFrame(updateCount);
-        }
-      };
-
-      requestAnimationFrame(updateCount);
-    });
-  });
-</script>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll("[data-target]");
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
-      const isPercent = counter.getAttribute("data-suffix") === "%";
-      const direction = counter.getAttribute("data-direction") === "down" ? -1 : 1;
-      let current = +counter.textContent.replace('%', '');
-
-      const step = Math.abs(target - current) / 40;
-
-      const updateCount = () => {
-        current += step * direction;
-        if ((direction === 1 && current >= target) || (direction === -1 && current <= target)) {
-          counter.textContent = target + (isPercent ? '%' : '');
-        } else {
-          counter.textContent = Math.round(current) + (isPercent ? '%' : '');
-          requestAnimationFrame(updateCount);
-        }
-      };
-
-      requestAnimationFrame(updateCount);
-    });
-  });
-</script>
-
+<!-- ✨ End of Counter section -->
+  
   <!-- Product cards remain unchanged -->
   <section id="products" class="py-20 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
