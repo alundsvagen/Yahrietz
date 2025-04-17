@@ -274,22 +274,28 @@
       background: white;
     }
 
-    .drag-wrapper {
-      max-width: 90vw;
-      margin: 0 auto;
-      overflow: hidden;
-      transform: scale(0.8);
-      transform-origin: top center;
-    }
+ .drag-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
 
-    .drag-section {
-      cursor: grab;
-      overflow-x: auto;
-      overflow-y: hidden;
-      display: flex;
-      gap: 40px;
-      padding: 40px 60px 40px 40px;
-      scroll-behavior: smooth;
+.drag-section {
+  cursor: grab;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  gap: 20px;
+  padding: 40px 16px; /* smaller horizontal padding on mobile */
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  .drag-section {
+    padding: 40px 40px;
+    gap: 40px;
+  }
     }
 
     .drag-section:active {
