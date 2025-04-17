@@ -464,9 +464,12 @@
       font-weight: 700;
       display: inline-block;
       min-height: 40px;
-      white-space: nowrap;
+      white-space: normal; /* ✅ Allow line wrapping */
+      word-break: break-word; /* ✅ Help long phrases wrap cleanly */
       border-right: 2px solid #333;
       overflow: hidden;
+    }
+
     }
 
     .fade-out {
