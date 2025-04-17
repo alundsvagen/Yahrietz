@@ -87,19 +87,19 @@
 <section class="py-24 px-6 bg-white text-gray-900">
   <style>
   .synagogue-section {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 40px; /* Reduced for mobile */
-    align-items: center;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 80px; /* Increased for mobile */
+  align-items: center;
+  justify-content: center;
+}
 
-  @media (min-width: 1024px) {
-    .synagogue-section {
-      flex-direction: row;
-      gap: 120px;
-    }
+@media (min-width: 1024px) {
+  .synagogue-section {
+    flex-direction: row;
+    gap: 120px; /* Keep or adjust for desktop */
   }
+}
 
   .synagogue-card {
     width: 280px;
@@ -131,19 +131,21 @@
   }
 
   .synagogue-header {
-    font-size: 32px; /* Smaller on mobile */
-    font-weight: 400;
-    margin-bottom: 12px; /* reduced spacing */
-    line-height: 1.2; /* tighten spacing */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+  font-size: 32px;
+  font-weight: 700; /* Bold on mobile */
+  margin-bottom: 12px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
-  @media (min-width: 768px) {
-    .synagogue-header {
-      font-size: 40px;
-      margin-bottom: 24px;
-    }
+@media (min-width: 768px) {
+  .synagogue-header {
+    font-size: 40px;
+    font-weight: 400; /* Optional: revert to lighter on tablet+ */
+    margin-bottom: 24px;
+  }
+}
   }
 
   .synagogue-line {
