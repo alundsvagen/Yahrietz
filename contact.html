@@ -21,17 +21,56 @@
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- Moved header OUT of <head> and into <body> -->
-  <header class="flex justify-between items-center px-6 py-4 border-b">
-    <a href="index.html" class="text-2xl font-extrabold tracking-tight">Yahrziet</a>
-    <nav class="space-x-6 hidden md:flex items-center">
-      <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
-      <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
-      <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
-      <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
-      <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
-    </nav>
-  </header>
+<header class="flex justify-between items-center px-6 py-4 border-b relative z-50">
+  <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
+
+  <!-- Hamburger Button -->
+  <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none">
+    <span class="block w-6 h-0.5 bg-pink-400 mb-1 transition-all"></span>
+    <span class="block w-6 h-0.5 bg-pink-400 mb-1 transition-all"></span>
+    <span class="block w-6 h-0.5 bg-pink-400 transition-all"></span>
+  </button>
+
+  <!-- Desktop nav -->
+  <nav class="space-x-6 hidden md:flex items-center">
+    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
+    <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
+    <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
+    <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+    <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
+  </nav>
+
+  <!-- Overlay background (click to close) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-30 hidden z-30"></div>
+
+  <!-- Mobile Slide-out Menu (from RIGHT) -->
+  <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-1/2 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-center px-6 space-y-6 md:hidden z-40">
+    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600 text-left">Get Started</a>
+    <a href="products.html" class="text-sm font-medium hover:text-blue-600 text-left">Products</a>
+    <a href="security.html" class="text-sm font-medium hover:text-blue-600 text-left">Security</a>
+    <a href="contact.html" class="text-sm font-medium hover:text-blue-600 text-left">Contact</a>
+    <a href="mailto:alexandra@yahrzeit.uk" class="bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition w-fit">Book demo</a>
+  </nav>
+</header>
+
+<script>
+  const toggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('menu-overlay');
+
+  function openMenu() {
+    mobileMenu.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+  }
+
+  toggleButton.addEventListener('click', openMenu);
+  overlay.addEventListener('click', closeMenu);
+</script>
 
   <!-- CTA BUTTON LINK FIXED -->
   <section class="bg-[#f1f0eb] py-20 px-6">
