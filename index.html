@@ -469,7 +469,6 @@
       border-right: 2px solid #333;
       overflow: hidden;
     }
-
     }
 
     .fade-out {
@@ -482,6 +481,26 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
+    .ripple-gradient {
+  background: linear-gradient(to right, #ec4899, #000); /* pink to black */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  animation: ripple 2s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    text-shadow: 0 0 0 rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(236, 72, 153, 0.5);
+  }
+}
   </style>
 
   <div class="typing-section">
