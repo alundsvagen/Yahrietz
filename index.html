@@ -21,26 +21,44 @@
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- Moved header OUT of <head> and into <body> -->
-  <header class="flex justify-between items-center px-6 py-4 border-b">
-    <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
-    <nav class="space-x-6 hidden md:flex items-center">
-      <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
-      <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
-      <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
-      <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
-      <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
-    </nav>
-  </header>
+<header class="flex justify-between items-center px-6 py-4 border-b relative">
+  <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
 
-  <!-- CTA BUTTON LINK FIXED -->
-  <section class="bg-[#f1f0eb] py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="hero-title">Admin That Works Like a Mensch</h1>
-      <p class="hero-subtext text-gray-700">Helping synagogues save time and stay organized—without the stress.</p>
-      <a href="mailto:alexandra@yahrzeit.uk" class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">Request a Demo</a>
-    </div>
-  </section>
+  <!-- Hamburger Button - visible on mobile -->
+  <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 text-white bg-pink-400 rounded">
+    <span class="block w-6 h-0.5 bg-white mb-1"></span>
+    <span class="block w-6 h-0.5 bg-white mb-1"></span>
+    <span class="block w-6 h-0.5 bg-white"></span>
+  </button>
+
+  <!-- Desktop nav (hidden on mobile) -->
+  <nav class="space-x-6 hidden md:flex items-center">
+    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
+    <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
+    <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
+    <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+    <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
+  </nav>
+
+  <!-- Mobile nav (hidden by default) -->
+  <nav id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-md p-6 flex-col space-y-4 text-center hidden md:hidden z-10">
+    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600 block">Get Started</a>
+    <a href="products.html" class="text-sm font-medium hover:text-blue-600 block">Products</a>
+    <a href="security.html" class="text-sm font-medium hover:text-blue-600 block">Security</a>
+    <a href="contact.html" class="text-sm font-medium hover:text-blue-600 block">Contact</a>
+    <a href="mailto:alexandra@yahrzeit.uk" class="bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition inline-block">Book demo</a>
+  </nav>
+</header>
+
+<script>
+  // JavaScript to toggle mobile menu
+  const toggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 
   <!-- ✨ Community Experience Section Start -->
 <section class="py-24 px-6 bg-white text-gray-900">
