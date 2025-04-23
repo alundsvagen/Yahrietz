@@ -159,61 +159,6 @@
   </div>
 </section>
 
-  
- <!-- Animated Counters Section -->
-<!-- 📊 Animated Counters Block -->
-<div style="
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 40px 0;
-  font-family: 'Inter', sans-serif;
-">
-  <div style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 37.5px; font-weight: bold; color: #FF82C2;">
-    <div id="count1">58</div>
-    <div style="font-weight: 300; font-size: 16px; margin-top: 10px; text-align: center; color: #444;">Hours Saved</div>
-  </div>
-  <div style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 37.5px; font-weight: bold; color: #FF82C2;">
-    <div id="count2">8%</div>
-    <div style="font-weight: 300; font-size: 16px; margin-top: 10px; text-align: center; color: #444;">Increased Registrations</div>
-  </div>
-  <div style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 37.5px; font-weight: bold; color: #FF82C2;">
-    <div id="count3">43%</div>
-    <div style="font-weight: 300; font-size: 16px; margin-top: 10px; text-align: center; color: #444;">Members Who Paid</div>
-  </div>
-</div>
-
-<script>
-  function animateCount(id, start, end, duration, isPercent = false) {
-    const el = document.getElementById(id);
-    const range = end - start;
-    const increment = range / (duration / 50);
-    let current = start;
-
-    const step = () => {
-      current += increment;
-      if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-        el.textContent = isPercent ? end.toFixed(0) + '%' : Math.round(end);
-      } else {
-        el.textContent = isPercent ? current.toFixed(0) + '%' : Math.round(current);
-        requestAnimationFrame(step);
-      }
-    };
-
-    requestAnimationFrame(step);
-  }
-
-  animateCount("count1", 58, 790, 120000);
-  animateCount("count2", 8, 37, 120000, true);
-  animateCount("count3", 43, 99, 120000, true);
-</script>
-
-<!-- Optional: Load Inter font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
-
   <!-- ✨ Start of mobile screens section -->
 <!DOCTYPE html>
 <html lang="en">
@@ -438,6 +383,60 @@
 
 </html>
   <!-- ✨ End of mobile screens section -->
+
+  <!-- Animated Counters Section -->
+<!-- 📊 Animated Counters Block -->
+<div style="
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 40px 0;
+  font-family: 'Inter', sans-serif;
+">
+  <div style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 37.5px; font-weight: bold; color: #FF82C2;">
+    <div id="count1">58</div>
+    <div style="font-weight: 300; font-size: 16px; margin-top: 10px; text-align: center; color: #444;">Hours Saved</div>
+  </div>
+  <div style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 37.5px; font-weight: bold; color: #FF82C2;">
+    <div id="count2">8%</div>
+    <div style="font-weight: 300; font-size: 16px; margin-top: 10px; text-align: center; color: #444;">Increased Registrations</div>
+  </div>
+  <div style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 37.5px; font-weight: bold; color: #FF82C2;">
+    <div id="count3">43%</div>
+    <div style="font-weight: 300; font-size: 16px; margin-top: 10px; text-align: center; color: #444;">Members Who Paid</div>
+  </div>
+</div>
+
+<script>
+  function animateCount(id, start, end, duration, isPercent = false) {
+    const el = document.getElementById(id);
+    const range = end - start;
+    const increment = range / (duration / 50);
+    let current = start;
+
+    const step = () => {
+      current += increment;
+      if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+        el.textContent = isPercent ? end.toFixed(0) + '%' : Math.round(end);
+      } else {
+        el.textContent = isPercent ? current.toFixed(0) + '%' : Math.round(current);
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }
+
+  animateCount("count1", 58, 790, 120000);
+  animateCount("count2", 8, 37, 120000, true);
+  animateCount("count3", 43, 99, 120000, true);
+</script>
+
+<!-- Optional: Load Inter font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
 
   <!-- ✨ Final Call-to-Action Section -->
 <style>
