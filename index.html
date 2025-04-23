@@ -159,7 +159,7 @@
   </div>
 </section>
 
-  <!-- ✨ Community Experience Section Start -->
+ <!-- ✨ Community Experience Section Start -->
 <section class="py-24 px-6 bg-white text-gray-900">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;600&display=swap');
@@ -221,32 +221,7 @@
     .synagogue-line {
       font-size: 22px;
       font-weight: 400;
-      margin-bottom: 1px;
-    }
-
-    .synagogue-dynamic {
-      font-size: 22px;
-      font-weight: 600;
-      display: inline-block;
-      min-height: 40px;
-      white-space: normal;
-      word-break: break-word;
-      border-right: 2px solid #111;
-      overflow: hidden;
-      color: #111;
-      margin-top: 6px;
-    }
-
-    @media (min-width: 768px) {
-      .synagogue-dynamic {
-        white-space: nowrap;
-        word-break: normal;
-      }
-    }
-
-    .fade-out {
-      opacity: 0;
-      transition: opacity 0.5s ease-out;
+      margin-bottom: 10px;
     }
 
     .cta-button {
@@ -266,58 +241,32 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
+
+    @media (max-width: 768px) {
+      .synagogue-text {
+        text-align: center;
+      }
+    }
   </style>
 
   <div class="synagogue-section">
     <!-- Text Content -->
     <div class="synagogue-text">
+      <p class="synagogue-line">Download our PDF product catalog.</p>
       <p class="synagogue-header">
         An investment that keeps <span class="lora-highlight">Generations</span> engaged.
       </p>
-      <p class="synagogue-line">Download our PDF product catalog.</p>
-      <div class="synagogue-dynamic fade-out" id="experience-text"></div>
       <a href="#" class="cta-button">Download PDF</a>
     </div>
 
     <!-- Floating Card -->
     <div class="synagogue-card">
-      <img src="bill.svg" alt="Bill Icon" />
+      <img src="shield-2.svg" alt="Shield Icon" />
     </div>
   </div>
-
-  <script>
-    const experiencePhrases = [
-      "EventShalom, SimchaSpace and Yahrietz Reminders."
-    ];
-
-    const experienceEl = document.getElementById("experience-text");
-    let index = 0;
-
-    function typeExperience(phrase, i = 0) {
-      if (i === 0) {
-        experienceEl.classList.add("fade-out");
-      }
-
-      setTimeout(() => {
-        if (i === 0) experienceEl.textContent = "";
-
-        if (i < phrase.length) {
-          experienceEl.classList.remove("fade-out");
-          experienceEl.textContent += phrase.charAt(i);
-          typeExperience(phrase, i + 1);
-        } else {
-          setTimeout(() => {
-            index = (index + 1) % experiencePhrases.length;
-            typeExperience(experiencePhrases[index]);
-          }, 2500);
-        }
-      }, i === 0 ? 500 : 50);
-    }
-
-    typeExperience(experiencePhrases[index]);
-  </script>
 </section>
 <!-- ✨ Community Experience Section End -->
+
 
 
   <!-- ✨ Start of mobile screens section -->
