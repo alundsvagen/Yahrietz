@@ -84,7 +84,7 @@
   </section>
 
   <!-- ✨ Start of mobile screens section -->
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -109,10 +109,9 @@
     .container {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: none;
+      width: 100vw;
       background: #fff;
       border-radius: 12px;
       overflow: hidden;
@@ -120,13 +119,14 @@
     }
 
     .text-section {
-      flex: 1 1 100%;
+      flex: 1;
       padding: 40px;
-      text-align: center;
+      text-align: left;
     }
 
     .text-section img {
       width: 60px;
+      height: 60px;
       margin-bottom: 20px;
     }
 
@@ -151,23 +151,26 @@
 
     .image-slider {
       position: relative;
-      flex: 1 1 100%;
-      overflow: hidden;
-      margin-top: 20px;
+      flex: 1;
+      overflow-x: visible;
+      margin-left: auto;
+      transform: translateX(20%);
     }
 
     .image-wrapper {
       display: flex;
       transition: transform 0.5s ease;
       justify-content: center;
+      touch-action: pan-y;
     }
 
     .slide {
       flex: 0 0 40%;
-      margin: 0 10px;
+      margin-right: 20px;
       border-radius: 12px;
       overflow: hidden;
       cursor: pointer;
+      touch-action: manipulation;
     }
 
     .slide img {
@@ -178,7 +181,7 @@
 
     .dots {
       position: absolute;
-      bottom: 10px;
+      bottom: -30px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -203,14 +206,44 @@
     }
 
     @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .text-section {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .text-section img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .image-slider {
+        width: 100%;
+        transform: none;
+        margin-left: 0;
+        overflow-x: scroll;
+      }
+
       .headline {
         font-size: 28px;
       }
+
+      .tagline {
+        font-size: 23px;
+      }
+
       .slide {
         flex: 0 0 80%;
       }
-      .tagline {
-        font-size: 23px;
+
+      .dots {
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
       }
     }
   </style>
