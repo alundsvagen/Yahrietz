@@ -83,6 +83,107 @@
     </div>
   </section>
 
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Numbers</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 37.5px;
+      font-weight: bold;
+      color: #FF82C2;
+    }
+
+    .tagline {
+      font-weight: 300;
+      font-size: 16px;
+      margin-top: 10px;
+      text-align: center;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div id="count1">58</div>
+      <div class="tagline">Hours Saved</div>
+    </div>
+    <div class="container">
+      <div id="count2">8%</div>
+      <div class="tagline">Increased Registrations</div>
+    </div>
+    <div class="container">
+      <div id="count3">43%</div>
+      <div class="tagline">Members Who Paid</div>
+    </div>
+  </div>
+
+  <script>
+    function animateCount(id, start, end, duration, isPercent = false) {
+      const el = document.getElementById(id);
+      const range = end - start;
+      const increment = range / (duration / 50);
+      let current = start;
+
+      const step = () => {
+        current += increment;
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+          el.textContent = isPercent ? end.toFixed(0) + '%' : Math.round(end);
+        } else {
+          el.textContent = isPercent ? current.toFixed(0) + '%' : Math.round(current);
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
+    }
+
+    // 2 minutes = 120000 milliseconds
+    animateCount("count1", 58, 790, 120000);
+    animateCount("count2", 8, 37, 120000, true);
+    animateCount("count3", 43, 99, 120000, true);
+  </script>
+</body>
+
+</html>
+
   <!-- ✨ Start of mobile screens section -->
 <!DOCTYPE html>
 <html lang="en">
