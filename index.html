@@ -84,8 +84,224 @@
   </section>
 
   <!-- ✨ Start of mobile screens section -->
-  
+  <!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Text with Image Slider</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-section {
+      flex: 1 1 100%;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .text-section img {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      color: #888;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .headline {
+      font-size: 36px;
+      font-weight: bold;
+      font-family: 'Lora', serif;
+      margin-bottom: 20px;
+    }
+
+    .paragraph {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .image-slider {
+      position: relative;
+      flex: 1 1 100%;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .image-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+      justify-content: center;
+    }
+
+    .slide {
+      flex: 0 0 40%;
+      margin: 0 10px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot:hover {
+      background-color: pink;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 28px;
+      }
+      .slide {
+        flex: 0 0 80%;
+      }
+      .tagline {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-section" id="text-section">
+      <img src="shield-2.svg" alt="Icon" id="header-icon">
+      <div class="tagline">Tagline 1</div>
+      <div class="headline">Headline 1</div>
+      <div class="paragraph">This is the description text for the first image. It provides context and some useful info.</div>
+    </div>
+    <div class="image-slider">
+      <div class="image-wrapper" id="image-wrapper">
+        <div class="slide"><img src="EventsCalendar.png" alt="Events Calendar"></div>
+        <div class="slide"><img src="Roombooking.png" alt="Room Booking"></div>
+        <div class="slide"><img src="payment.png" alt="Payment"></div>
+      </div>
+      <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const wrapper = document.getElementById('image-wrapper');
+    const dots = document.querySelectorAll('.dot');
+    const textSection = document.getElementById('text-section');
+    const headerIcon = document.getElementById('header-icon');
+
+    let textContent = [
+      {
+        icon: 'shield-2.svg',
+        tagline: 'Tagline 1',
+        headline: 'Headline 1',
+        paragraph: 'This is the description text for the first image. It provides context and some useful info.'
+      },
+      {
+        icon: 'cash.svg',
+        tagline: 'Tagline 2',
+        headline: 'Headline 2',
+        paragraph: 'Here we explain something different with this image. Useful details and value points are here.'
+      },
+      {
+        icon: 'send.svg',
+        tagline: 'Tagline 3',
+        headline: 'Headline 3',
+        paragraph: 'The third image brings another perspective with fresh content for the user to engage with.'
+      }
+    ];
+
+    function rotateSlides() {
+      const slides = Array.from(wrapper.children);
+      wrapper.appendChild(slides.shift());
+
+      textContent.push(textContent.shift());
+
+      headerIcon.src = textContent[0].icon;
+      headerIcon.alt = textContent[0].headline;
+
+      textSection.innerHTML = `
+        <img src="${textContent[0].icon}" alt="Icon" id="header-icon">
+        <div class="tagline">${textContent[0].tagline}</div>
+        <div class="headline">${textContent[0].headline}</div>
+        <div class="paragraph">${textContent[0].paragraph}</div>
+      `;
+
+      updateDots();
+    }
+
+    function updateDots() {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[0].classList.add('active');
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', rotateSlides);
+    });
+
+    document.querySelectorAll('.slide').forEach(slide => {
+      slide.addEventListener('click', rotateSlides);
+    });
+
+    setInterval(rotateSlides, 15000);
+  </script>
+</body>
+
+</html>
   <!-- ✨ End of mobile screens section -->
 
   <!-- ✨ Final Call-to-Action Section -->
