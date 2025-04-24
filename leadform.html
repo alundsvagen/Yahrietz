@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById("leadForm");
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+      }).then(res => {
+        if (res.ok) {
+          alert("Thanks! We'll be in touch.");
+          form.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      });
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #ff82c2;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e56cae;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Request a Demo</h1>
+    <form id="leadForm" action="https://sheetdb.io/api/v1/rn27l2rlsjvim" method="POST" onsubmit="handleSubmit(event)">
+      <input type="text" name="data[name]" placeholder="Your Name" required />
+      <input type="email" name="data[email]" placeholder="Your Email" required />
+      <input type="text" name="data[organization]" placeholder="Organization" />
+      <textarea name="data[message]" placeholder="Tell us a bit about what you’re looking for..." rows="4"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
