@@ -297,29 +297,61 @@
     }
   </style>
 
-  <!-- Text Content -->
+  <div class="synagogue-section">
+    <!-- Text Content -->
     <div class="synagogue-text">
       <p class="synagogue-line">Download our PDF product catalog.</p>
       <p class="synagogue-header">
         An investment that keeps <span class="lora-highlight">Generations</span> engaged.
       </p>
-      <a 
-        href="https://www.yahrziet.com/wpc.pdf" 
-        class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        PDF product catalog
-      </a>
+      <a href="javascript:void(0);" id="openModal" class="cta-button">Download PDF</a>
     </div>
 
-    <!-- Floating Card (now properly inside the flex container) -->
+    <!-- Floating Card -->
     <div class="synagogue-card">
       <img src="shield-2.svg" alt="Shield Icon" />
     </div>
   </div>
+
+  <!-- Modal Structure -->
+  <div class="modal-overlay" id="pdfModal">
+    <div class="modal-content">
+      <span class="modal-close" id="closeModal">&times;</span>
+      <div style="width:100%; height:500px;"
+           data-fillout-id="5pkYAEXNDxus"
+           data-fillout-embed-type="standard"
+           data-fillout-inherit-parameters
+           data-fillout-dynamic-resize>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Fillout Embed Script -->
+<script src="https://server.fillout.com/embed/v1/"></script>
+
+<!-- Modal JS Logic -->
+<script>
+  const openBtn = document.getElementById('openModal');
+  const closeBtn = document.getElementById('closeModal');
+  const modal = document.getElementById('pdfModal');
+
+  openBtn.addEventListener('click', function () {
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
 <!-- ✨ Community Experience Section End -->
+
 
 
   <!-- ✨ Start of mobile screens section -->
