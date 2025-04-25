@@ -306,43 +306,6 @@
     </div>
   </div>
 
-  <!-- Modal Structure -->
-  <div class="modal-overlay" id="pdfModal">
-    <div class="modal-content">
-      <span class="modal-close" id="closeModal">&times;</span>
-      <div style="width:100%; height:500px;"
-           data-fillout-id="5pkYAEXNDxus"
-           data-fillout-embed-type="standard"
-           data-fillout-inherit-parameters
-           data-fillout-dynamic-resize>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Fillout Embed Script -->
-<script src="https://server.fillout.com/embed/v1/"></script>
-
-<!-- Modal JS Logic -->
-<script>
-  const openBtn = document.getElementById('openModal');
-  const closeBtn = document.getElementById('closeModal');
-  const modal = document.getElementById('pdfModal');
-
-  openBtn.addEventListener('click', function () {
-    modal.style.display = 'flex';
-  });
-
-  closeBtn.addEventListener('click', function () {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', function (e) {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-</script>
 <!-- ✨ Community Experience Section End -->
 
 
