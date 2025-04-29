@@ -124,22 +124,7 @@
   </div>
 </section>
 
-
-<!-- CTA BUTTON LINK FIXED -->
-<section class="bg-[#f1f0eb] py-20 px-6">
-  <div class="max-w-3xl mx-auto text-left">
-    <a
-      href="https://www.yahrziet.com/Yahrziets.pdf"
-      class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90 bg-blue-500 text-white inline-block"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Download the Yahrziet Reminders PDF
-    </a>
-  </div>
-</section>
-
-     <!-- ✨ Community Experience Section Start -->
+  <!-- ✨ Community Experience Section Start -->
 <section class="py-24 px-6 bg-white text-gray-900">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;600&display=swap');
@@ -164,10 +149,9 @@
       height: 400px;
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(135deg, rgba(255, 130, 194, 0.5), rgba(255, 130, 194, 0.05));
-      background-size: 200% 200%;
+      background-color: #fff;
       position: relative;
-      animation: float 10s ease-in-out infinite, moveGradient 12s ease-in-out infinite;
+      animation: float 10s ease-in-out infinite;
       overflow: hidden;
     }
 
@@ -188,46 +172,34 @@
     }
 
     .synagogue-header {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 10.4px; /* Previously 8px → 8 * 1.3 = 10.4 */
-  line-height: 1.2;
-}
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 10.4px;
+      line-height: 1.2;
+    }
 
     .synagogue-header .lora-highlight {
       font-family: 'Lora', serif;
       color: #db2777;
     }
 
-  .synagogue-line {
-  font-size: 22px;
-  font-weight: 400;
-  margin-bottom: 1px; /* Previously 6px → 6 * 0.5 = 3 */
-}
+    .synagogue-line {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
 
-   .synagogue-dynamic {
-  font-size: 22px;
-  font-weight: 600;
-  display: inline-block;
-  min-height: 40px;
-  white-space: normal; /* ✅ allow line wrapping */
-  word-break: break-word; /* ✅ break long words cleanly */
-  border-right: 2px solid #111;
-  overflow: hidden;
-  color: #111;
-  margin-top: 6px;
-}
-
-@media (min-width: 768px) {
-  .synagogue-dynamic {
-    white-space: nowrap; /* Optional: nowrap only on tablets & up */
-    word-break: normal;
-  }
-}
-
-    .fade-out {
-      opacity: 0;
-      transition: opacity 0.5s ease-out;
+    .cta-button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #ff82c2;
+      color: white;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
     }
 
     @keyframes float {
@@ -236,66 +208,121 @@
       100% { transform: translateY(0); }
     }
 
-    @keyframes moveGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @media (max-width: 768px) {
+      .synagogue-text {
+        text-align: center;
+      }
+    }
+
+    /* MODAL STYLES */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90%;
+      overflow: auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: #000;
     }
   </style>
 
   <div class="synagogue-section">
     <!-- Text Content -->
     <div class="synagogue-text">
+      <p class="synagogue-line">Download our PDF product catalog.</p>
       <p class="synagogue-header">
         An investment that keeps <span class="lora-highlight">Generations</span> engaged.
       </p>
-      <p class="synagogue-line">Why continue doing Yahrziet letters?</p>
-      <div class="synagogue-dynamic fade-out" id="experience-text"></div>
+      <a href="javascript:void(0);" id="openModal" class="cta-button">Download PDF</a>
     </div>
 
     <!-- Floating Card -->
     <div class="synagogue-card">
-      <img src="thank-you.svg" alt="Thank You Icon" />
+      <img src="shield-2.svg" alt="Shield Icon" />
     </div>
   </div>
 
-  <script>
-    const experiencePhrases = [
-      "People feel apart of their community.",
-      "Engagement increases.",
-      "The lost are not forgotten.",
-      "Judaism supports those grieving.",
-      "Letters make people feel remembered."
-    ];
-
-    const experienceEl = document.getElementById("experience-text");
-    let index = 0;
-
-    function typeExperience(phrase, i = 0) {
-      if (i === 0) {
-        experienceEl.classList.add("fade-out");
-      }
-
-      setTimeout(() => {
-        if (i === 0) experienceEl.textContent = "";
-
-        if (i < phrase.length) {
-          experienceEl.classList.remove("fade-out");
-          experienceEl.textContent += phrase.charAt(i);
-          typeExperience(phrase, i + 1);
-        } else {
-          setTimeout(() => {
-            index = (index + 1) % experiencePhrases.length;
-            typeExperience(experiencePhrases[index]);
-          }, 2500);
-        }
-      }, i === 0 ? 500 : 50);
-    }
-
-    typeExperience(experiencePhrases[index]);
-  </script>
+  <!-- Modal Structure -->
+  <div class="modal-overlay" id="pdfModal">
+    <div class="modal-content">
+      <span class="modal-close" id="closeModal">&times;</span>
+      <div style="width:100%; height:500px;"
+           data-fillout-id="vkSvp2uS5Sus"
+           data-fillout-embed-type="standard"
+           data-fillout-inherit-parameters
+           data-fillout-dynamic-resize>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Fillout Embed Script -->
+<script src="https://server.fillout.com/embed/v1/"></script>
+
+<!-- Modal JS Logic -->
+<script>
+  const openBtn = document.getElementById('openModal');
+  const closeBtn = document.getElementById('closeModal');
+  const modal = document.getElementById('pdfModal');
+
+  openBtn.addEventListener('click', function () {
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
 <!-- ✨ Community Experience Section End -->
+
+
+<!-- CTA BUTTON LINK FIXED -->
+<section class="bg-[#f1f0eb] py-20 px-6">
+  <div class="max-w-3xl mx-auto text-left">
+    <a
+      href="https://www.yahrziet.com/Yahrziets.pdf"
+      class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90 bg-blue-500 text-white inline-block"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Download the Yahrziet Reminders PDF
+    </a>
+  </div>
+</section>
   
 <!-- ✨ Pricing Section -->
 <section class="py-24 overflow-hidden">
@@ -518,6 +545,164 @@
     font-family: 'Inter', sans-serif;
   }
 </style>
+
+  <!-- ✨ Community Experience Section Start -->
+<section class="py-24 px-6 bg-white text-gray-900">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;600&display=swap');
+
+    .synagogue-section {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 80px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .synagogue-section {
+        flex-direction: row;
+        gap: 120px;
+      }
+    }
+
+    .synagogue-card {
+      width: 280px;
+      height: 400px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, rgba(255, 130, 194, 0.5), rgba(255, 130, 194, 0.05));
+      background-size: 200% 200%;
+      position: relative;
+      animation: float 10s ease-in-out infinite, moveGradient 12s ease-in-out infinite;
+      overflow: hidden;
+    }
+
+    .synagogue-card img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 240px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .synagogue-text {
+      max-width: 500px;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .synagogue-header {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 10.4px; /* Previously 8px → 8 * 1.3 = 10.4 */
+  line-height: 1.2;
+}
+
+    .synagogue-header .lora-highlight {
+      font-family: 'Lora', serif;
+      color: #db2777;
+    }
+
+  .synagogue-line {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 1px; /* Previously 6px → 6 * 0.5 = 3 */
+}
+
+   .synagogue-dynamic {
+  font-size: 22px;
+  font-weight: 600;
+  display: inline-block;
+  min-height: 40px;
+  white-space: normal; /* ✅ allow line wrapping */
+  word-break: break-word; /* ✅ break long words cleanly */
+  border-right: 2px solid #111;
+  overflow: hidden;
+  color: #111;
+  margin-top: 6px;
+}
+
+@media (min-width: 768px) {
+  .synagogue-dynamic {
+    white-space: nowrap; /* Optional: nowrap only on tablets & up */
+    word-break: normal;
+  }
+}
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+
+  <div class="synagogue-section">
+    <!-- Text Content -->
+    <div class="synagogue-text">
+      <p class="synagogue-header">
+        An investment that keeps <span class="lora-highlight">Generations</span> engaged.
+      </p>
+      <p class="synagogue-line">Why continue doing Yahrziet letters?</p>
+      <div class="synagogue-dynamic fade-out" id="experience-text"></div>
+    </div>
+
+    <!-- Floating Card -->
+    <div class="synagogue-card">
+      <img src="thank-you.svg" alt="Thank You Icon" />
+    </div>
+  </div>
+
+  <script>
+    const experiencePhrases = [
+      "People feel apart of their community.",
+      "Engagement increases.",
+      "The lost are not forgotten.",
+      "Judaism supports those grieving.",
+      "Letters make people feel remembered."
+    ];
+
+    const experienceEl = document.getElementById("experience-text");
+    let index = 0;
+
+    function typeExperience(phrase, i = 0) {
+      if (i === 0) {
+        experienceEl.classList.add("fade-out");
+      }
+
+      setTimeout(() => {
+        if (i === 0) experienceEl.textContent = "";
+
+        if (i < phrase.length) {
+          experienceEl.classList.remove("fade-out");
+          experienceEl.textContent += phrase.charAt(i);
+          typeExperience(phrase, i + 1);
+        } else {
+          setTimeout(() => {
+            index = (index + 1) % experiencePhrases.length;
+            typeExperience(experiencePhrases[index]);
+          }, 2500);
+        }
+      }, i === 0 ? 500 : 50);
+    }
+
+    typeExperience(experiencePhrases[index]);
+  </script>
+</section>
+<!-- ✨ Community Experience Section End -->
 
 <section class="bg-white py-20 px-6">
   <div class="max-w-3xl mx-auto text-center">
