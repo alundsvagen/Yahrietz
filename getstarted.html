@@ -8,103 +8,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-    .animate-gradient { background-size: 200% 200%; animation: gradientShift 15s ease infinite; }
-    body { font-family: 'Inter', sans-serif; }
-    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .animate-slide { animation: slide 80s linear infinite; }
-    .hero-title { font-family: 'Lora', serif; font-weight: 700; font-size: 70px; line-height: 1.1; margin-bottom: 1rem; }
-    .hero-subtext { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.4; margin-bottom: 2rem; }
-    .cta-button { background-color: #ff82c2; color: white; }
-    .section-header { font-family: 'Lora', serif; font-weight: 700; }
-    .section-subtext { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="bg-white text-gray-900">
-
-  <header class="flex justify-between items-center px-6 py-4 border-b relative z-50">
-  <a href="index.html" class="text-2xl font-extrabold tracking-tight">Yahrziet</a>
-
-  <!-- Hamburger Button -->
-  <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none">
-    <span class="block w-6 h-0.5 bg-pink-400 mb-1 transition-all"></span>
-    <span class="block w-6 h-0.5 bg-pink-400 mb-1 transition-all"></span>
-    <span class="block w-6 h-0.5 bg-pink-400 transition-all"></span>
-  </button>
-
-  <!-- Desktop nav -->
-  <nav class="space-x-6 hidden md:flex items-center">
-    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
-    <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
-    <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
-    <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
-    <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
-  </nav>
-
-  <!-- Overlay background (click to close) -->
-  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-30 hidden z-30"></div>
-
-  <!-- Mobile Slide-out Menu (from RIGHT) -->
-  <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-1/2 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-center px-6 space-y-6 md:hidden z-40">
-    <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600 text-left">Get Started</a>
-    <a href="products.html" class="text-sm font-medium hover:text-blue-600 text-left">Products</a>
-    <a href="security.html" class="text-sm font-medium hover:text-blue-600 text-left">Security</a>
-    <a href="contact.html" class="text-sm font-medium hover:text-blue-600 text-left">Contact</a>
-    <a href="mailto:alexandra@yahrzeit.uk" class="bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition w-fit">Book demo</a>
-  </nav>
-</header>
-
-<script>
-  const toggleButton = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('menu-overlay');
-
-  function openMenu() {
-    mobileMenu.classList.remove('translate-x-full');
-    overlay.classList.remove('hidden');
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.add('translate-x-full');
-    overlay.classList.add('hidden');
-  }
-
-  toggleButton.addEventListener('click', openMenu);
-  overlay.addEventListener('click', closeMenu);
-</script>
-
-  <!-- CTA BUTTON LINK FIXED -->
-<section class="bg-[#f1f0eb] py-20 px-6">
-  <div class="max-w-3xl mx-auto text-center">
-    <h1 class="hero-title">Event Shalom</h1>
-    <p class="hero-subtext text-gray-700">Forms connected to Payments, that really revolutionized things for us.</p>
-    <a 
-      href="https://www.yahrziet.com/EventShalom.pdf" 
-      class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      Download EventShalom PDF
-    </a>
-  </div>
-</section>
-
-<!-- ✨ Round Cards Rotation Section -->
-  <section class="relative w-full h-screen bg-white overflow-hidden">
-  <style>
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      overflow: hidden; /* ✅ fixes right-side overflow */
+      overflow-x: hidden; /* allow vertical scroll, hide horizontal */
+      margin: 0;
     }
 
-    .orbit-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      transform: translate(-50%, -50%);
+    .hero-title {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 70px;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtext {
+      font-size: 18px;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background-color: #ff82c2;
+      color: white;
     }
 
     .orbit-card {
@@ -128,7 +54,6 @@
     .orbit-card h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
     }
 
     .orbit-card img {
@@ -153,164 +78,14 @@
         font-size: 1.1rem;
       }
 
-      .orbit-card p {
-        font-size: 0.9rem;
-      }
-
       .orbit-card img {
         width: 36px;
         height: 36px;
       }
-    }
-  </style>
 
-  <div class="orbit-container" id="orbit"></div>
-
-  <script>
-    const orbit = document.getElementById('orbit');
-
-    function getRadius() {
-      return window.innerWidth < 768 ? 160 : 300;
-    }
-
-    let radius = getRadius();
-    let rotation = 0;
-    const cardCount = 5;
-
-    const cardsData = [
-      { title: "Billing", text: "Automated and secure billing processes.", icon: "bill.svg" },
-      { title: "Events", text: "Easily schedule and manage community events.", icon: "calendar.svg" },
-      { title: "Donations", text: "Accept donations securely through Stripe.", icon: "cash.svg" },
-      { title: "Culture", text: "Build community with meaningful traditions.", icon: "coffee-cup-2.svg" },
-      { title: "Communications", text: "Send updates and reminders effortlessly.", icon: "send.svg" },
-    ];
-
-    const cards = [];
-
-    cardsData.forEach((data) => {
-      const card = document.createElement('div');
-      card.className = 'orbit-card';
-      card.innerHTML = `
-        <h3>${data.title}</h3>
-        <img src="${data.icon}" alt="${data.title} icon" />
-        <p>${data.text}</p>
-      `;
-      orbit.appendChild(card);
-      cards.push(card);
-    });
-
-    function animate() {
-      radius = getRadius();
-      rotation += 0.1;
-
-      cards.forEach((card, i) => {
-        const angleOffset = (360 / cardCount) * i + rotation;
-        const rad = angleOffset * (Math.PI / 180);
-        const x = radius * Math.cos(rad);
-        const y = radius * Math.sin(rad);
-
-        card.style.transform = `translate(${x}px, ${y}px)`;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', () => {
-      radius = getRadius();
-    });
-
-    animate();
-  </script>
-</section>
-<!-- ✨ Round Cards Rotation Section -->
-
-<!-- ✨ Final Call-to-Action Section -->
-<style>
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradientShift 15s ease infinite;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-
-  .hero-title {
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  .hero-subtext {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    line-height: 1.4;
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    background-color: #ff82c2;
-    color: white;
-  }
-
-  .section-header {
-    font-family: 'Lora', serif;
-    font-weight: 700;
-  }
-
-  .section-subtext {
-    font-family: 'Inter', sans-serif;
-  }
-</style>
-
-<section class="bg-white py-20 px-6">
-  <div class="max-w-3xl mx-auto text-center">
-    <h1 class="hero-title">Try It Free for 3 Months</h1>
-    <p class="hero-subtext text-gray-700">
-      Get the first 3 months free — no commitment.<br />
-      Try all three products with zero risk. Cancel anytime — no credit card required to start.
-    </p>
-     <a href="https://forms.fillout.com/t/2urxCrfmqfus"
-      class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90"
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      Explore for Free
-    </a>
-  </div>
-</section>
-
-    <!-- ✨ Footer Start -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yahrziet — Tools Built for Synagogues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: white;
-      color: #111;
-    }
-
-    .footer-wrapper {
-      margin: 0;
-      padding: 0;
+      .orbit-card p {
+        font-size: 0.9rem;
+      }
     }
 
     .footer {
@@ -323,126 +98,142 @@
       width: 100vw;
       position: relative;
       left: 50%;
-      right: 50%;
       margin-left: -50vw;
-      margin-right: -50vw;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .footer-column {
-      flex: 1 1 220px;
-      margin: 10px;
-    }
-
-    .footer a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .footer a:hover {
-      color: black;
-    }
-
-    .logo-link {
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .logo-text {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 0;
-    }
-
-    .tagline {
-      font-size: 16px;
-      font-weight: 400;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .footer-links,
-    .footer-contact {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .logo-text {
-        font-size: 42px; /* 50% bigger */
-      }
-
-      .tagline {
-        margin-bottom: 20px;
-      }
-
-      .footer-column {
-        width: 100%;
-        margin-bottom: 20px;
-      }
     }
   </style>
 </head>
-<body id="top">
+<body class="bg-white text-gray-900">
+  <header class="flex justify-between items-center px-6 py-4 border-b relative z-50">
+    <a href="#" class="text-2xl font-extrabold tracking-tight">Yahrziet</a>
+    <button id="menu-toggle" class="md:hidden w-10 h-10 flex flex-col justify-center items-center">
+      <span class="block w-6 h-0.5 bg-pink-400 mb-1"></span>
+      <span class="block w-6 h-0.5 bg-pink-400 mb-1"></span>
+      <span class="block w-6 h-0.5 bg-pink-400"></span>
+    </button>
+    <nav class="space-x-6 hidden md:flex items-center">
+      <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600">Get Started</a>
+      <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
+      <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
+      <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+      <a href="mailto:alexandra@yahrzeit.uk" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800">Book demo</a>
+    </nav>
+    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-30 hidden z-30"></div>
+    <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-1/2 bg-white transform translate-x-full transition-transform flex flex-col justify-center px-6 space-y-6 md:hidden z-40">
+      <a href="getstarted.html" class="text-sm font-medium">Get Started</a>
+      <a href="products.html" class="text-sm font-medium">Products</a>
+      <a href="security.html" class="text-sm font-medium">Security</a>
+      <a href="contact.html" class="text-sm font-medium">Contact</a>
+      <a href="mailto:alexandra@yahrzeit.uk" class="bg-black text-white px-5 py-2 text-sm rounded-full">Book demo</a>
+    </nav>
+  </header>
 
-  <div class="footer-wrapper">
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <a href="#top" class="logo-link">
-            <div class="logo-text">Yahrziet</div>
-            <div class="tagline">Tools Built for Synagogues</div>
-          </a>
-        </div>
-
-        <div class="footer-column footer-links">
-          <a href="https://www.yahrziet.com/wpc.pdf" target="_blank" rel="noopener">Product Catalog</a>
-          <a href="https://www.yahrziet.com/EventShalom.pdf" target="_blank" rel="noopener">EventShalom</a>
-          <a href="https://www.yahrziet.com/SimchaSpace.pdf" target="_blank" rel="noopener">SimchaSpace</a>
-          <a href="https://www.yahrziet.com/Yahrziets.pdf" target="_blank" rel="noopener">Yahrziet Reminders</a>
-          <a href="https://www.yahrziet.com/Pricing%2020252026.pdf" target="_blank" rel="noopener">Pricing</a>
-          <a href="https://www.yahrziet.com/Mission%20Statement.pdf" target="_blank" rel="noopener">Mission Statement</a>
-        </div>
-
-        <div class="footer-column footer-contact">
-          <span>alexandra@yahrziet.uk</span>
-          <a href="https://forms.fillout.com/t/2urxCrfmqfus" target="_blank" rel="noopener">Book Demo</a>
-        </div>
+  <main>
+    <section class="bg-[#f1f0eb] py-20 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="hero-title">Event Shalom</h1>
+        <p class="hero-subtext text-gray-700">Forms connected to Payments, that really revolutionized things for us.</p>
+        <a href="https://www.yahrziet.com/EventShalom.pdf" class="cta-button px-8 py-3 text-lg rounded-full hover:opacity-90" target="_blank" rel="noopener noreferrer">Download EventShalom PDF</a>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        &copy; 2025 Yahrziet. All rights reserved.
+    <!-- Orbiting Cards -->
+    <section class="relative w-full h-screen bg-white overflow-hidden">
+      <div class="orbit-container" id="orbit"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-white py-20 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="hero-title">Try It Free for 3 Months</h1>
+        <p class="hero-subtext text-gray-700">
+          Get the first 3 months free — no commitment.<br>
+          Try all three products with zero risk. Cancel anytime — no credit card required to start.
+        </p>
+        <a href="https://forms.fillout.com/t/2urxCrfmqfus" class="cta-button px-8 py-3 text-lg rounded-full hover:opacity-90" target="_blank" rel="noopener noreferrer">Explore for Free</a>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href="#top" class="logo-link">
+          <div class="logo-text">Yahrziet</div>
+          <div class="tagline">Tools Built for Synagogues</div>
+        </a>
+      </div>
+      <div class="footer-column footer-links">
+        <a href="https://www.yahrziet.com/wpc.pdf" target="_blank">Product Catalog</a>
+        <a href="https://www.yahrziet.com/EventShalom.pdf" target="_blank">EventShalom</a>
+        <a href="https://www.yahrziet.com/SimchaSpace.pdf" target="_blank">SimchaSpace</a>
+        <a href="https://www.yahrziet.com/Yahrziets.pdf" target="_blank">Yahrziet Reminders</a>
+        <a href="https://www.yahrziet.com/Pricing%2020252026.pdf" target="_blank">Pricing</a>
+        <a href="https://www.yahrziet.com/Mission%20Statement.pdf" target="_blank">Mission Statement</a>
+      </div>
+      <div class="footer-column footer-contact">
+        <span>alexandra@yahrziet.uk</span>
+        <a href="https://forms.fillout.com/t/2urxCrfmqfus" target="_blank">Book Demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">&copy; 2025 Yahrziet. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+
+    toggleButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('translate-x-full');
+      overlay.classList.toggle('hidden');
+    });
+    overlay.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+    });
+
+    // Orbiting cards
+    const orbit = document.getElementById('orbit');
+    function getRadius() {
+      return window.innerWidth < 768 ? 160 : 300;
+    }
+    let radius = getRadius();
+    let rotation = 0;
+    const cardCount = 5;
+    const cardsData = [
+      { title: "Billing", text: "Automated and secure billing processes.", icon: "bill.svg" },
+      { title: "Events", text: "Easily schedule and manage community events.", icon: "calendar.svg" },
+      { title: "Donations", text: "Accept donations securely through Stripe.", icon: "cash.svg" },
+      { title: "Culture", text: "Build community with meaningful traditions.", icon: "coffee-cup-2.svg" },
+      { title: "Communications", text: "Send updates and reminders effortlessly.", icon: "send.svg" },
+    ];
+    const cards = [];
+    cardsData.forEach((data) => {
+      const card = document.createElement('div');
+      card.className = 'orbit-card';
+      card.innerHTML = `
+        <h3>${data.title}</h3>
+        <img src="${data.icon}" alt="${data.title} icon" />
+        <p>${data.text}</p>
+      `;
+      orbit.appendChild(card);
+      cards.push(card);
+    });
+    function animate() {
+      radius = getRadius();
+      rotation += 0.1;
+      cards.forEach((card, i) => {
+        const angleOffset = (360 / cardCount) * i + rotation;
+        const rad = angleOffset * (Math.PI / 180);
+        const x = radius * Math.cos(rad);
+        const y = radius * Math.sin(rad);
+        card.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', () => { radius = getRadius(); });
+    animate();
+  </script>
 </body>
 </html>
-
-
-
-
