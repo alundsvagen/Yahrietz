@@ -704,6 +704,10 @@
   <title>Yahrziet — Tools Built for Synagogues</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -711,19 +715,24 @@
       color: #111;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .footer-wrapper {
+      margin: 0;
+      padding: 0;
     }
 
     .footer {
-      background: linear-gradient(135deg, #ffe4f1, #f0c8e8, #ffd6e7, #ffdaf5);
-      background-size: 200% 200%;
-      animation: gradientShift 15s ease infinite;
+      background-image: url('Footerbackground.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: black;
       padding: 40px 20px;
-      font-family: 'Inter', sans-serif;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
     }
 
     .footer-container {
@@ -770,7 +779,7 @@
 
     .footer-links a:hover,
     .footer-contact a:hover {
-      color: #ffffff;
+      color: white;
     }
 
     .footer-bottom {
@@ -794,32 +803,34 @@
 </head>
 <body>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <div class="logo-text">Yahrziet</div>
-        <div class="tagline">Tools Built for Synagogues</div>
+  <div class="footer-wrapper">
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <div class="logo-text">Yahrziet</div>
+          <div class="tagline">Tools Built for Synagogues</div>
+        </div>
+
+        <div class="footer-column footer-links">
+          <a href="https://www.yahrziet.com/wpc.pdf" target="_blank" rel="noopener">Product Catalog</a>
+          <a href="https://www.yahrziet.com/EventShalom.pdf" target="_blank" rel="noopener">EventShalom</a>
+          <a href="https://www.yahrziet.com/SimchaSpace.pdf" target="_blank" rel="noopener">SimchaSpace</a>
+          <a href="https://www.yahrziet.com/Yahrziets.pdf" target="_blank" rel="noopener">Yahrziet Reminders</a>
+          <a href="https://www.yahrziet.com/Pricing%2020252026.pdf" target="_blank" rel="noopener">Pricing</a>
+          <a href="https://www.yahrziet.com/Mission%20Statement.pdf" target="_blank" rel="noopener">Mission Statement</a>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <span>alexandra@yahrziet.uk</span>
+          <a href="https://forms.fillout.com/t/2urxCrfmqfus" target="_blank" rel="noopener">Book Demo</a>
+        </div>
       </div>
 
-      <div class="footer-column footer-links">
-        <a href="https://www.yahrziet.com/wpc.pdf" target="_blank" rel="noopener">Product Catalog</a>
-        <a href="https://www.yahrziet.com/EventShalom.pdf" target="_blank" rel="noopener">EventShalom</a>
-        <a href="https://www.yahrziet.com/SimchaSpace.pdf" target="_blank" rel="noopener">SimchaSpace</a>
-        <a href="https://www.yahrziet.com/Yahrziets.pdf" target="_blank" rel="noopener">Yahrziet Reminders</a>
-        <a href="https://www.yahrziet.com/Pricing%2020252026.pdf" target="_blank" rel="noopener">Pricing</a>
-        <a href="https://www.yahrziet.com/Mission%20Statement.pdf" target="_blank" rel="noopener">Mission Statement</a>
+      <div class="footer-bottom">
+        &copy; 2025 Yahrziet. All rights reserved.
       </div>
-
-      <div class="footer-column footer-contact">
-        <span>alexandra@yahrziet.uk</span>
-        <a href="https://forms.fillout.com/t/2urxCrfmqfus" target="_blank" rel="noopener">Book Demo</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      &copy; 2025 Yahrziet. All rights reserved.
-    </div>
-  </footer>
+    </footer>
+  </div>
 
 </body>
 </html>
