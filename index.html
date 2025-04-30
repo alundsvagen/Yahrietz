@@ -695,38 +695,131 @@
   </div>
 </section>
 
-
-  
   <!-- ✨ Footer Start -->
-<footer class="bg-gray-900 text-white py-16">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:justify-between md:items-center gap-12">
-    
-    <!-- Left: Brand & Motto -->
-    <div class="space-y-4 text-center md:text-left">
-      <h2 class="text-2xl font-bold tracking-tight">Yahrziet</h2>
-      <p class="text-gray-400">Built with Love from the Stockholm Jewish Community</p>
-      <a href="mailto:hello@yahrziet.uk" class="text-pink-400 hover:underline">hello@yahrziet.uk</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yahrziet — Tools Built for Synagogues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      color: #111;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .footer {
+      background: linear-gradient(135deg, #ffe4f1, #f0c8e8, #ffd6e7, #ffdaf5);
+      background-size: 200% 200%;
+      animation: gradientShift 15s ease infinite;
+      color: black;
+      padding: 40px 20px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-column {
+      flex: 1 1 220px;
+      margin: 10px;
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .footer-links,
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a,
+    .footer-contact a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: black;
+    }
+
+    @media (max-width: 600px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-column {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="logo-text">Yahrziet</div>
+        <div class="tagline">Tools Built for Synagogues</div>
+      </div>
+
+      <div class="footer-column footer-links">
+        <a href="https://www.yahrziet.com/wpc.pdf" target="_blank" rel="noopener">Product Catalog</a>
+        <a href="https://www.yahrziet.com/EventShalom.pdf" target="_blank" rel="noopener">EventShalom</a>
+        <a href="https://www.yahrziet.com/SimchaSpace.pdf" target="_blank" rel="noopener">SimchaSpace</a>
+        <a href="https://www.yahrziet.com/Yahrziets.pdf" target="_blank" rel="noopener">Yahrziet Reminders</a>
+        <a href="https://www.yahrziet.com/Pricing%2020252026.pdf" target="_blank" rel="noopener">Pricing</a>
+        <a href="https://www.yahrziet.com/Mission%20Statement.pdf" target="_blank" rel="noopener">Mission Statement</a>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <span>alexandra@yahrziet.uk</span>
+        <a href="https://forms.fillout.com/t/2urxCrfmqfus" target="_blank" rel="noopener">Book Demo</a>
+      </div>
     </div>
 
-    <!-- Right: Navigation -->
-    <div class="flex flex-col items-center md:items-end gap-4 text-sm">
-      <nav class="flex gap-6">
-        <a href="#products" class="hover:text-pink-400 transition">Products</a>
-        <a href="#about" class="hover:text-pink-400 transition">About</a>
-        <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
-      </nav>
-      <p class="text-gray-500 text-xs mt-4">&copy; <span id="year"></span> Yahrziet. All rights reserved.</p>
+    <div class="footer-bottom">
+      &copy; 2025 Yahrziet. All rights reserved.
     </div>
+  </footer>
 
-  </div>
-</footer>
-
-<script>
-  // Auto-update footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<!-- ✨ Footer End -->
-
-  
 </body>
 </html>
