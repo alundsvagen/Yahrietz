@@ -89,6 +89,141 @@
   </div>
 </section>
 
+<!-- ✨ Round Cards Rotation Section -->
+  <section class="relative w-full h-screen bg-white overflow-hidden">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden; /* ✅ fixes right-side overflow */
+    }
+
+    .orbit-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .orbit-card {
+      position: absolute;
+      width: 220px;
+      height: 400px;
+      padding: 1.5rem;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transform-origin: center center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .orbit-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .orbit-card img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .orbit-card p {
+      font-size: 1rem;
+      color: #4b5563;
+    }
+
+    @media (max-width: 768px) {
+      .orbit-card {
+        width: 160px;
+        height: 280px;
+        font-size: 0.9rem;
+        padding: 1rem;
+      }
+
+      .orbit-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .orbit-card p {
+        font-size: 0.9rem;
+      }
+
+      .orbit-card img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+
+  <div class="orbit-container" id="orbit"></div>
+
+  <script>
+    const orbit = document.getElementById('orbit');
+
+    function getRadius() {
+      return window.innerWidth < 768 ? 160 : 300;
+    }
+
+    let radius = getRadius();
+    let rotation = 0;
+    const cardCount = 5;
+
+    const cardsData = [
+      { title: "Billing", text: "Automated and secure billing processes.", icon: "bill.svg" },
+      { title: "Events", text: "Easily schedule and manage community events.", icon: "calendar.svg" },
+      { title: "Donations", text: "Accept donations securely through Stripe.", icon: "cash.svg" },
+      { title: "Culture", text: "Build community with meaningful traditions.", icon: "coffee-cup-2.svg" },
+      { title: "Communications", text: "Send updates and reminders effortlessly.", icon: "send.svg" },
+    ];
+
+    const cards = [];
+
+    cardsData.forEach((data) => {
+      const card = document.createElement('div');
+      card.className = 'orbit-card';
+      card.innerHTML = `
+        <h3>${data.title}</h3>
+        <img src="${data.icon}" alt="${data.title} icon" />
+        <p>${data.text}</p>
+      `;
+      orbit.appendChild(card);
+      cards.push(card);
+    });
+
+    function animate() {
+      radius = getRadius();
+      rotation += 0.1;
+
+      cards.forEach((card, i) => {
+        const angleOffset = (360 / cardCount) * i + rotation;
+        const rad = angleOffset * (Math.PI / 180);
+        const x = radius * Math.cos(rad);
+        const y = radius * Math.sin(rad);
+
+        card.style.transform = `translate(${x}px, ${y}px)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+      radius = getRadius();
+    });
+
+    animate();
+  </script>
+</section>
+<!-- ✨ Round Cards Rotation Section -->
+
 <!-- ✨ Final Call-to-Action Section -->
 <style>
   @keyframes gradientShift {
