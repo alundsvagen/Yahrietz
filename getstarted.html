@@ -255,6 +255,243 @@
   
 <!-- ✨ Typing + Floating Card Section End -->
 
+    <!-- ✨ Start of mobile screens section -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Text with Image Slider</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+      .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; /* Optional for spacing */
+      max-width: 1200px;        /* Add a fixed max-width for better layout */
+      width: 100%;
+      margin: 0 auto;           /* CENTER the section */
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-section {
+      flex: 1;
+      padding: 80px;
+      text-align: left;
+    }
+
+    .text-section img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      color: #888;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .headline {
+      font-size: 36px;
+      font-weight: bold;
+      font-family: 'Lora', serif;
+      margin-bottom: 20px;
+    }
+
+    .paragraph {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .image-slider {
+      position: relative;
+      flex: 1;
+      overflow-x: visible;
+      margin-left: auto;
+      transform: translateX(20%);
+    }
+
+    .image-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+      justify-content: center;
+      touch-action: pan-y;
+    }
+
+    .slide {
+      flex: 0 0 40%;
+      margin-right: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .text-section {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .text-section img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .image-slider {
+        width: 100%;
+        transform: none;
+        margin-left: 0;
+        overflow-x: scroll;
+      }
+
+      .headline {
+        font-size: 28px;
+      }
+
+      .tagline {
+        font-size: 23px;
+      }
+
+      .slide {
+        flex: 0 0 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-section" id="text-section">
+      <img src="shield-2.svg" alt="Icon" id="header-icon">
+      <div class="tagline">No CRM change required.</div>
+      <div class="headline">Events, Registrations, Payments.</div>
+      <div class="paragraph">With EventShalom, the leading Shul software and Jewish event scheduling software, get an easy-to-use website calendar that’s always updated and connected to registrations and payments.</div>
+    </div>
+    <div class="image-slider">
+      <div class="image-wrapper" id="image-wrapper">
+        <div class="slide"><img src="EventsCalendar.png" alt="Events Calendar"></div>
+        <div class="slide"><img src="Roombooking.png" alt="Room Booking"></div>
+        <div class="slide"><img src="payment.png" alt="Payment"></div>
+      </div>
+      <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.getElementById('image-wrapper');
+    const textSection = document.getElementById('text-section');
+    const headerIcon = document.getElementById('header-icon');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentIndex = 0;
+
+    const textContent = [
+      {
+        icon: 'shield-2.svg',
+        tagline: 'No CRM change required.',
+        headline: 'Synagogue software',
+        paragraph: 'With EventShalom, the synagogue website builder and provider of Jewish community management tools, get an easy website calendar that\'s always updated and connected to registrations.'
+      },
+      {
+        icon: 'cash.svg',
+        tagline: 'Saving Effort and Time',
+        headline: 'Shul Space Bookings.',
+        paragraph: 'Complement your workload with SimchaSpace, the synagogue management software and Shul software that makes room booking and scheduling easy.'
+      },
+      {
+        icon: 'send.svg',
+        tagline: 'No set-up required.',
+        headline: 'Membership management for synagogues',
+        paragraph: 'With EventShalom, the Shul donation software and synagogue dues management solution, help your members go from your website to registration and payment—plus, we handle the setup for you.'
+      }
+    ];
+
+    function rotateSlides(index = null) {
+      if (index !== null) {
+        currentIndex = index;
+      } else {
+        currentIndex = (currentIndex + 1) % textContent.length;
+      }
+
+      // Move slides
+      const slides = Array.from(wrapper.children);
+      for (let i = 0; i < currentIndex; i++) {
+        wrapper.appendChild(wrapper.firstElementChild);
+      }
+
+      // Update text section
+      const content = textContent[currentIndex];
+      textSection.innerHTML = `
+        <img src="${content.icon}" alt="Icon" id="header-icon">
+        <div class="tagline">${content.tagline}</div>
+        <div class="headline">${content.headline}</div>
+        <div class="paragraph">${content.paragraph}</div>
+      `;
+
+      // Update active dot
+      updateDots();
+    }
+
+    function updateDots() {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => rotateSlides(i));
+    });
+
+    document.querySelectorAll('.slide').forEach(slide => {
+      slide.addEventListener('click', rotateSlides);
+    });
+
+    setInterval(() => rotateSlides(), 15000);
+  });
+</script>
+</body>
+
+</html>
+  <!-- ✨ End of mobile screens section -->
+
   <section id="products" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex justify-center gap-6 flex-wrap">
