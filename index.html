@@ -288,7 +288,8 @@
     <div class="synagogue-text">
       <p class="synagogue-line">Oh Vey! Not another Synagogue Management Software.</p>
       <p class="synagogue-header">
-      We are a little <span class="lora-highlight">different.</span> Our goal isn't software. It's to grow your community.
+      We are a little <span class="lora-highlight">different.</span> Our goal isn't software. 
+        It's to grow your community.
       </p>
       <a href="https://forms.fillout.com/t/2urxCrfmqfus"
       class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90"
@@ -305,6 +306,119 @@
     </div>
   </div>
 <!-- ✨ Community Experience Section End -->
+
+<!-- ✨ Community Experience Section Start -->
+<section class="py-24 px-6 bg-white text-gray-900">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;600&display=swap');
+
+    .synagogue-section {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .synagogue-section {
+        flex-direction: row;
+        gap: 120px;
+      }
+    }
+
+    .synagogue-card {
+      width: 280px;
+      height: 400px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      position: relative;
+      animation: float 10s ease-in-out infinite;
+      overflow: hidden;
+    }
+
+    .synagogue-card img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 240px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .synagogue-text {
+      max-width: 500px;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .synagogue-header {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 10.4px;
+      line-height: 1.2;
+    }
+
+    .synagogue-header .lora-highlight {
+      font-family: 'Lora', serif;
+      color: #db2777;
+    }
+
+    .synagogue-line {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #ff82c2;
+      color: white;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .synagogue-text {
+        text-align: center;
+      }
+    }
+  </style>
+
+  <div class="synagogue-section">
+    <!-- Image First on Desktop -->
+    <div class="synagogue-card">
+      <img src="wallet.svg" alt="Yahrzeits Icon" />
+    </div>
+
+    <!-- Text Content -->
+    <div class="synagogue-text">
+      <p class="synagogue-line">What makes us different.</p>
+      <p class="synagogue-header">
+        We are a <span class="lora-highlight">low touch solution.</span> Meaning, instead of you spending hours in a software, we do that for you. We meet with our clients once a month for 1 hour, share knowledge, stastics and do updates for you. So you can spend more time in the community, saving you lots of time and growing your community too.
+      </p>
+      <a href="mailto:alexandra@yahrziet.com"
+         class="cta-button px-8 py-3 text-lg rounded-full transition hover:opacity-90">
+        Email Alexandra
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ✨ Community Experience Section End -->
+
   
 <!-- Optional: Load Inter font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
