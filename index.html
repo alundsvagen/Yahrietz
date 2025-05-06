@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="HdS3zR1sa0jDdi0523vLNuMfM8zCGUvqUtf27qcfYO0" />
-  <title>Yahrzeit — Tools Built for Synagogues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <style>
-    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-    .animate-gradient { background-size: 200% 200%; animation: gradientShift 15s ease infinite; }
-    body { font-family: 'Inter', sans-serif; }
-    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .animate-slide { animation: slide 80s linear infinite; }
-    .hero-title { font-family: 'Lora', serif; font-weight: 700; font-size: 70px; line-height: 1.1; margin-bottom: 1rem; }
-    .hero-subtext { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.4; margin-bottom: 2rem; }
-    .cta-button { background-color: #ff82c2; color: white; }
-    .section-header { font-family: 'Lora', serif; font-weight: 700; }
-    .section-subtext { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="bg-white text-gray-900">
-
 <header class="flex justify-between items-center px-6 py-4 border-b relative z-50">
   <div class="text-2xl font-extrabold tracking-tight">Yahrziet</div>
 
-  <!-- Hotjar Tracking Code for https://www.yahrziet.com/ -->
-<script>
+  <!-- Hotjar Tracking Code -->
+  <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:6389519,hjsv:6};
@@ -36,7 +11,7 @@
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+  </script>
 
   <!-- Hamburger Button -->
   <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none">
@@ -51,13 +26,14 @@
     <a href="products.html" class="text-sm font-medium hover:text-blue-600">Products</a>
     <a href="security.html" class="text-sm font-medium hover:text-blue-600">Security</a>
     <a href="contact.html" class="text-sm font-medium hover:text-blue-600">Contact</a>
+    <a href="yahrzeits-calculator.html" class="text-sm font-medium hover:text-blue-600">Yahrzeit Calculator</a>
     <a href="mailto:alexandra@yahrziet.com" class="ml-4 bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition">Book demo</a>
   </nav>
 
-  <!-- Overlay background (click to close) -->
+  <!-- Overlay background -->
   <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-30 hidden z-30"></div>
 
-  <!-- Mobile Slide-out Menu (from RIGHT) -->
+  <!-- Mobile Slide-out Menu -->
   <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-1/2 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-center px-6 space-y-6 md:hidden z-40">
     <a href="getstarted.html" class="text-sm font-medium hover:text-blue-600 text-left">Get Started</a>
     <a href="products.html" class="text-sm font-medium hover:text-blue-600 text-left">Products</a>
@@ -67,25 +43,6 @@
     <a href="mailto:alexandra@yahrziet.com" class="bg-black text-white px-5 py-2 text-sm rounded-full hover:bg-gray-800 transition w-fit">Book demo</a>
   </nav>
 </header>
-  
-<script>
-  const toggleButton = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('menu-overlay');
-
-  function openMenu() {
-    mobileMenu.classList.remove('translate-x-full');
-    overlay.classList.remove('hidden');
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.add('translate-x-full');
-    overlay.classList.add('hidden');
-  }
-
-  toggleButton.addEventListener('click', openMenu);
-  overlay.addEventListener('click', closeMenu);
-</script>
 
   <!-- ✅ CTA SECTION (hero) -->
 <section class="bg-[#f1f0eb] py-20 px-6">
