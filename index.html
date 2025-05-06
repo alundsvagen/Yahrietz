@@ -263,18 +263,21 @@
     </div>
   </div>
 
-  <script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById('image-wrapper');
-    const dots = document.querySelectorAll('.dot');
     const textSection = document.getElementById('text-section');
     const headerIcon = document.getElementById('header-icon');
+    const dots = document.querySelectorAll('.dot');
 
-    let textContent = [
+    let currentIndex = 0;
+
+    const textContent = [
       {
         icon: 'shield-2.svg',
         tagline: 'No CRM change required.',
         headline: 'Synagogue software',
-        paragraph: 'With EventShalom, the synagogue website builder and provider of Jewish community management tools, get an easy website calendar that's always updated and connected to registrations.'
+        paragraph: 'With EventShalom, the synagogue website builder and provider of Jewish community management tools, get an easy website calendar that\'s always updated and connected to registrations.'
       },
       {
         icon: 'cash.svg',
@@ -290,40 +293,49 @@
       }
     ];
 
-    function rotateSlides() {
+    function rotateSlides(index = null) {
+      if (index !== null) {
+        currentIndex = index;
+      } else {
+        currentIndex = (currentIndex + 1) % textContent.length;
+      }
+
+      // Move slides
       const slides = Array.from(wrapper.children);
-      wrapper.appendChild(slides.shift());
+      for (let i = 0; i < currentIndex; i++) {
+        wrapper.appendChild(wrapper.firstElementChild);
+      }
 
-      textContent.push(textContent.shift());
-
-      headerIcon.src = textContent[0].icon;
-      headerIcon.alt = textContent[0].headline;
-
+      // Update text section
+      const content = textContent[currentIndex];
       textSection.innerHTML = `
-        <img src="${textContent[0].icon}" alt="Icon" id="header-icon">
-        <div class="tagline">${textContent[0].tagline}</div>
-        <div class="headline">${textContent[0].headline}</div>
-        <div class="paragraph">${textContent[0].paragraph}</div>
+        <img src="${content.icon}" alt="Icon" id="header-icon">
+        <div class="tagline">${content.tagline}</div>
+        <div class="headline">${content.headline}</div>
+        <div class="paragraph">${content.paragraph}</div>
       `;
 
+      // Update active dot
       updateDots();
     }
 
     function updateDots() {
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[0].classList.add('active');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
     }
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', rotateSlides);
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => rotateSlides(i));
     });
 
     document.querySelectorAll('.slide').forEach(slide => {
       slide.addEventListener('click', rotateSlides);
     });
 
-    setInterval(rotateSlides, 15000);
-  </script>
+    setInterval(() => rotateSlides(), 15000);
+  });
+</script>
 </body>
 
 </html>
