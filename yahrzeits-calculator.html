@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hebrew Date & Candle Lighting Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 40px;
+      padding-left: 100px;
+      padding-right: 100px;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      text-align: left;
+    }
+    p.description {
+      max-width: 800px;
+      margin: 0 auto 40px 0;
+      text-align: left;
+      font-size: 1em;
+      color: #333;
+    }
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .form-container {
+        flex-direction: row;
+      }
+    }
+    form {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    label span.sub {
+      font-family: 'Lora', serif;
+      color: #DB2777;
+      font-weight: normal;
+      margin-left: 6px;
+    }
+    input[type="text"], input[type="date"], input[type="number"], select {
+      width: 100%;
+      padding: 30px 20px;
+      margin-top: 5px;
+      font-size: 1.2em;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f1f0eb;
+      color: #000;
+      outline: none;
+    }
+    input::placeholder, select::placeholder {
+      color: #f1f0eb;
+    }
+    input:focus, select:focus {
+      border-color: #FF82c2;
+      box-shadow: 0 0 5px #FF82c2;
+    }
+    .output {
+      background: #f5f5f5;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .footer-text {
+      max-width: 800px;
+      margin: 40px auto 0;
+      text-align: center;
+      font-size: 1em;
+      color: #555;
+    }
+    .date-fields {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .date-fields > div {
+      flex: 1;
+    }
+
+    @media (max-width: 767px) {
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .date-fields {
+        flex-direction: column;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      input[type="number"],
+      select {
+        font-size: 1em;
+        padding: 16px 14px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .form-container {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hebrew Date & Candle Lighting Calculator</h1>
+    <p class="description">
+      Use this calculator to determine the Hebrew anniversary of a loved one's passing in the year 2025,
+      and find the appropriate time to light a memorial candle based on your location.
+    </p>
+  </header>
+
+  <div class="form-container">
+    <!-- Part 1: Hebrew Date Conversion -->
+    <form>
+      <h2>Part 1: Hebrew Date in <span class="sub">2025</span></h2>
+      <label>Date of Passing<span class="sub">Gregorian</span>:</label>
+      <div class="date-fields">
+        <div>
+          <label for="death-month">Month:</label>
+          <select id="death-month" name="death-month">
+            <option value=""></option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div>
+          <label for="death-day">Day:</label>
+          <input type="number" id="death-day" name="death-day" min="1" max="31">
+        </div>
+        <div>
+          <label for="death-year">Year:</label>
+          <input type="number" id="death-year" name="death-year" min="1800" max="2100">
+        </div>
+      </div>
+
+      <label for="hebrew-date">Hebrew Date of Passing<span class="sub">Original Year</span>:</label>
+      <div id="hebrew-date" class="output">(calculated Hebrew date will appear here)</div>
+
+      <label for="hebrew-english">Hebrew Date<span class="sub">Spelled Out</span>:</label>
+      <div id="hebrew-english" class="output">(spelled-out date will appear here)</div>
+
+      <label for="gregorian-this-year">Corresponding Gregorian Date<span class="sub">2025</span>:</label>
+      <div id="gregorian-this-year" class="output">(calculated Gregorian date will appear here)</div>
+    </form>
+
+    <!-- Part 2: Candle Lighting Time -->
+    <form>
+      <h2>Part 2: Candle Lighting Time</h2>
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="us" selected>United States</option>
+        <option value="ca">Canada</option>
+        <option value="gb">United Kingdom</option>
+        <option value="au">Australia</option>
+        <option value="il">Israel</option>
+      </select>
+
+      <label for="zipcode">Zip Code:</label>
+      <input type="text" id="zipcode" name="zipcode">
+
+      <label for="sunset-time">Sunset Time<span class="sub">UTC</span>:</label>
+      <div id="sunset-time" class="output">(sunset time will appear here)</div>
+
+      <label for="candle-light-time">Candle Lighting Time<span class="sub">UTC, 18 min before sunset</span>:</label>
+      <div id="candle-light-time" class="output">(candle lighting time will appear here)</div>
+    </form>
+  </div>
+
+  <div class="footer-text">
+    <p>
+      This tool helps honor your loved one's memory by aligning traditions with accurate modern timing.
+      Please consult your local rabbi for confirmation of exact times if needed.
+    </p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
